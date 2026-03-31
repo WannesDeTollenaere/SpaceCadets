@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d1e6ebcbf4e1947b64c50ee8b1acf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lift
-  _ElevatorAnim: {fileID: 2812890731709194120}
+  _ElevatorAnim: {fileID: 842079699628430567}
+  _ExtendSpeed: 1
 --- !u!1001 &875126022190068492
 PrefabInstance:
   m_ObjectHideFlags: 0
