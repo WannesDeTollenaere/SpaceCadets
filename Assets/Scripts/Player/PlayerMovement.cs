@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MoveCharacter()
     {
-        if (_moveInput.x * _moveInput.x < float.Epsilon)
+        if (_moveInput.sqrMagnitude < float.Epsilon)
         {
             if (_isMoving)
             {
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _moveInput = input;
 
-        if (!_isMoving)
+        if (_moveInput.sqrMagnitude > float.Epsilon && !_isMoving)
         {
             _isMoving = true;
             OnStartedMoving?.Invoke();
