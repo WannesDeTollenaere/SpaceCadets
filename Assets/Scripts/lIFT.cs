@@ -9,8 +9,6 @@ public class Lift : MonoBehaviour
 
     public void Activate()
     {
-        Debug.Log("Kaas");
-
         _ElevatorAnim.SetBool("IsElevated", true);
     }
 

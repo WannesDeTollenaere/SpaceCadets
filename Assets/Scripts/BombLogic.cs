@@ -15,6 +15,13 @@ public class BombLogic : MonoBehaviour, ICell
         }
     }
 
+    public void Reveal()
+    {
+        if (CellState == ICell.State.Triggered) return;
+
+
+    }
+
     public void Activate()
     {
         CellState = ICell.State.Triggered;
