@@ -4,6 +4,13 @@ using UnityEngine.InputSystem;
 
 public class PiggyBack : MonoBehaviour
 {
+    [SerializeField]
+    private Transform _attachTransform;
+    public Transform AttachTransform
+    {
+        get { return _attachTransform; }
+    }
+
     private bool _pressedPiggyBack = false;
     public bool PressedPiggyBack
     {
@@ -13,7 +20,7 @@ public class PiggyBack : MonoBehaviour
 
     public UnityEvent OnPlayerPressedPiggyBack;
     
-    public void OnJump(InputValue button)
+    public void PressPiggyBack()
     {
         _pressedPiggyBack = true;
         OnPlayerPressedPiggyBack?.Invoke();

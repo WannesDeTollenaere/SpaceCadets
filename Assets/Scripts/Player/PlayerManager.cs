@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -23,7 +24,16 @@ public class PlayerManager : MonoBehaviour
         set { _smallPlayer = value; }
     }
 
-    private bool _playersAttached = false;
+    public enum PiggyBackState
+    {
+        Detached,
+        Attaching,
+        Attached
+    }
+    private PiggyBackState _piggyBackState = PiggyBackState.Detached;
+
+    public UnityEvent OnPlayersAttached;
+    public UnityEvent OnPlayersDetached;
 
     private void Start()
     {
@@ -37,11 +47,27 @@ public class PlayerManager : MonoBehaviour
         _smallPlayer.OnPlayerPressedPiggyBack.RemoveListener(AttachPlayers);
     }
 
+    private void Update()
+    {
+        if (_piggyBackState == PiggyBackState.Attached)
+        {
+            _smallPlayer.transform.SetPositionAndRotation(_bigPlayer.AttachTransform.position, _bigPlayer.AttachTransform.rotation);
+        }
+    }
+
     private void AttachPlayers()
     {
-        if (_playersAttached) return;
-
-        StartCoroutine(TimerRoutine());
+        switch (_piggyBackState)
+        {
+            case PiggyBackState.Detached:
+                StartCoroutine(TimerRoutine());
+                break;
+            case PiggyBackState.Attaching:
+                break;
+            case PiggyBackState.Attached:
+                DetachPlayers();
+                break;
+        }
     }
 
     IEnumerator TimerRoutine()
@@ -60,6 +86,7 @@ public class PlayerManager : MonoBehaviour
             {
                 StartPiggyBack();
 
+                _piggyBackState = PiggyBackState.Attaching;
                 _bigPlayer.PressedPiggyBack = false;
                 _smallPlayer.PressedPiggyBack = false;
 
@@ -95,13 +122,33 @@ public class PlayerManager : MonoBehaviour
         {
             float t = elapsedTime / _duration;
             
-            _smallPlayer.transform.position = Vector3.Lerp(startPosition, _bigPlayer.transform.position, t);
+            _smallPlayer.transform.position = Vector3.Lerp(startPosition, _bigPlayer.AttachTransform.position, t);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         };
 
-        _smallPlayer.transform.position = _bigPlayer.transform.position;
+        _smallPlayer.transform.position = _bigPlayer.AttachTransform.position;
+
+        _smallPlayer.transform.SetParent(_bigPlayer.transform);
+        var _smallPlayerRB = _smallPlayer.GetComponent<Rigidbody>();
+        _smallPlayerRB.useGravity = false;
+
+        _piggyBackState = PiggyBackState.Attached;
+        OnPlayersAttached?.Invoke();
+    }
+
+    private void DetachPlayers()
+    {
+        Debug.Log("Throw small guy");
+
+        _smallPlayer.transform.SetParent(null);
+
+        var _smallPlayerRB = _smallPlayer.GetComponent<Rigidbody>();
+        _smallPlayerRB.useGravity = true;
+
+        _piggyBackState = PiggyBackState.Detached;
+        OnPlayersDetached?.Invoke();
     }
 }
 

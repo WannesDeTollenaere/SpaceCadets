@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
     
     private void OnPiggyBack(InputAction.CallbackContext context)
     {
-        //_piggyBackComp.Jump();
+        _piggyBackComp.PressPiggyBack();
     }
     
     private void OnAbility(InputAction.CallbackContext context)
