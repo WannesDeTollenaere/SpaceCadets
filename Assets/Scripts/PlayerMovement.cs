@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController _characterController;
     private Vector2 _moveInput;
     private bool _isMoving = false;
+    private float _verticalSpeed = 0.0f;
 
     public UnityEvent OnStartedMoving;
     public UnityEvent OnStoppedMoving;
@@ -39,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         MoveCharacter();
+        ApplyGravity();
     }
 
     private void MoveCharacter()
@@ -54,9 +56,22 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        Vector3 moveVelocity = _moveInput * _moveSpeed;
+        Vector3 moveVelocity = new Vector3(_moveInput.x, 0.0f, _moveInput.y) * _moveSpeed;
 
         _characterController.Move(moveVelocity * Time.fixedDeltaTime);
+    }
+
+    private void ApplyGravity()
+    {
+        const float GRAVITY = -18.0f;
+
+        _verticalSpeed += GRAVITY * Time.fixedDeltaTime;
+        _characterController.Move(_verticalSpeed * Vector3.up * Time.fixedDeltaTime);
+
+        if (_characterController.isGrounded)
+        {
+            _verticalSpeed = 0.0f;
+        }
     }
 
     public void OnMove(InputValue value)
