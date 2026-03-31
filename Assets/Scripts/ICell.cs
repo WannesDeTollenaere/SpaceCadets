@@ -1,7 +1,8 @@
 public interface ICell
 {
-    bool IsActivated { get; }
+    enum State { Revealed, Hidden, Triggered }
 
+    State CellState { get; }
     //uint floor { get; }
 
     void Activate();

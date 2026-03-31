@@ -2,20 +2,21 @@ using UnityEngine;
 
 public class BombLogic : MonoBehaviour, ICell
 {
-    public bool IsActivated { get; private set; }
+    public ICell.State CellState { get; set; } = ICell.State.Hidden;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !IsActivated)
+        if (other.CompareTag("Player") && CellState != ICell.State.Triggered)
         {
             Activate();
 
+            // kill player
             Destroy(other.gameObject);
         }
     }
 
     public void Activate()
     {
-        IsActivated = true;
+        CellState = ICell.State.Triggered;
     }
 }

@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour, ICell
 {
-    public bool IsActivated { get; private set; }
+    public ICell.State CellState { get; set;} = ICell.State.Hidden;
 
     [SerializeField]
     private GameObject _revealedPrefab;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !IsActivated)
+        if (other.CompareTag("Player") && CellState != ICell.State.Triggered)
         {
             Activate();
         }
@@ -17,7 +17,7 @@ public class Cell : MonoBehaviour, ICell
 
     public void Activate()
     {
-        IsActivated = true;
+        CellState = ICell.State.Triggered;
         if (_revealedPrefab != null)      
             Instantiate(_revealedPrefab, transform.position, transform.rotation);
 

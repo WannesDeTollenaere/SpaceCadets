@@ -1,13 +1,11 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Lift : MonoBehaviour, ICell
+public class Lift : MonoBehaviour
 {
-    public bool IsActivated { get; private set; }
 
     [SerializeField]
     private Animator _ElevatorAnim;
-
 
     public void Activate()
     {
