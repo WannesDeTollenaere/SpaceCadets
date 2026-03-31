@@ -7,11 +7,39 @@ public class Cell : MonoBehaviour, ICell
     [SerializeField]
     private GameObject _revealedPrefab;
 
+    [SerializeField]
+    private GameObject _scannedVisual;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && CellState != ICell.State.Triggered)
         {
             Activate();
+        }
+    }
+    public void Reveal()
+    {
+        if (CellState == ICell.State.Triggered || CellState == ICell.State.Revealed)
+            return;
+
+        CellState = ICell.State.Revealed;
+
+        if (_scannedVisual != null)
+        {
+            _scannedVisual.SetActive(true);
+        }
+    }
+
+    public void Hide()
+    {
+        if (CellState == ICell.State.Triggered || CellState == ICell.State.Hidden)
+            return;
+
+        CellState = ICell.State.Hidden;
+
+        if (_scannedVisual != null)
+        {
+            _scannedVisual.SetActive(false);
         }
     }
 

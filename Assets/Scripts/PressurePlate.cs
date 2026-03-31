@@ -14,7 +14,6 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
         if (other.CompareTag(_triggerTag))
         {
             _objectsOnPlate++;

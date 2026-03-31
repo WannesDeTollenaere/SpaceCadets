@@ -27,7 +27,6 @@ public class Lift : MonoBehaviour
 
         if (_IsExtended)
         {
-            Debug.Log("ae;ioja;difoj");
             _ElevatorAnim.localPosition = Vector3.Slerp(_ElevatorAnim.localPosition, Vector3.up, _ExtendSpeed);
         } else
         {
