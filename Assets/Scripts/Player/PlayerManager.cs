@@ -12,12 +12,16 @@ public class PlayerManager : MonoBehaviour
     private float _attachDuration = 2.0f;
     [SerializeField]
     private float _distanceThreshold = 1.0f;
+    [SerializeField]
+    private GameObject _playersInRangeIndicator;
+    [SerializeField]
+    private float _rangeIndicatorHeight = 1.0f;
 
     private PiggyBack _bigPlayer;
     public PiggyBack BigPlayer
     {
         get { return _bigPlayer; }
-        set {  _bigPlayer = value; }
+        set { _bigPlayer = value; }
     }
     private PiggyBack _smallPlayer;
     public PiggyBack SmallPlayer
@@ -33,6 +37,9 @@ public class PlayerManager : MonoBehaviour
         Attached
     }
     private PiggyBackState _piggyBackState = PiggyBackState.Detached;
+
+    private bool _arePlayersInRange = false;
+    private bool _isAttachCooldownActive = false;
 
     public UnityEvent OnPlayersAttached;
     public UnityEvent OnPlayersDetached;
@@ -55,6 +62,34 @@ public class PlayerManager : MonoBehaviour
         {
             _smallPlayer.transform.SetPositionAndRotation(_bigPlayer.AttachTransform.position, _bigPlayer.AttachTransform.rotation);
         }
+
+        if (ArePlayersInRange() && !_isAttachCooldownActive)
+        {
+            _arePlayersInRange = true;
+        }
+        else
+        {
+            _arePlayersInRange = false;
+        }
+
+        if (_playersInRangeIndicator)
+        {
+            if (_arePlayersInRange && _piggyBackState == PiggyBackState.Detached)
+            {
+                var playersPositionCenter = (_bigPlayer.transform.position + _smallPlayer.transform.position) / 2.0f;
+                _playersInRangeIndicator.transform.position = new Vector3(
+                    playersPositionCenter.x,
+                    playersPositionCenter.y + _rangeIndicatorHeight,
+                    playersPositionCenter.z
+                );
+
+                _playersInRangeIndicator.SetActive(true);
+            }
+            else
+            {
+                _playersInRangeIndicator.SetActive(false);
+            }
+        }
     }
 
     private void AttachPlayers()
@@ -62,7 +97,7 @@ public class PlayerManager : MonoBehaviour
         switch (_piggyBackState)
         {
             case PiggyBackState.Detached:
-                if (ArePlayersInRange())
+                if (_arePlayersInRange)
                 {
                     StartCoroutine(TimerRoutine());
                 }
@@ -126,12 +161,13 @@ public class PlayerManager : MonoBehaviour
         while (elapsedTime < _attachDuration)
         {
             float t = elapsedTime / _attachDuration;
-            
+
             _smallPlayer.transform.position = Vector3.Lerp(startPosition, _bigPlayer.AttachTransform.position, t);
 
             elapsedTime += Time.deltaTime;
             yield return null;
-        };
+        }
+        ;
 
         _smallPlayer.transform.position = _bigPlayer.AttachTransform.position;
 
@@ -145,8 +181,6 @@ public class PlayerManager : MonoBehaviour
 
     private void DetachPlayers()
     {
-        Debug.Log("Throw small guy");
-
         _smallPlayer.transform.SetParent(null);
 
         var _smallPlayerRB = _smallPlayer.GetComponent<Rigidbody>();
@@ -154,8 +188,11 @@ public class PlayerManager : MonoBehaviour
 
         _smallPlayer.Launch();
 
+        _isAttachCooldownActive = true;
         _piggyBackState = PiggyBackState.Detached;
         OnPlayersDetached?.Invoke();
+
+        StartCoroutine(AttachCooldownRoutine());
     }
 
     private bool ArePlayersInRange()
@@ -168,6 +205,21 @@ public class PlayerManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    IEnumerator AttachCooldownRoutine()
+    {
+        const float attachCooldown = 1.0f;
+        float timer = 0f;
+
+        while (timer < attachCooldown)
+        {
+            timer += Time.deltaTime;
+
+            yield return null;
+        }
+
+        _isAttachCooldownActive = false;
     }
 }
 
