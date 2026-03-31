@@ -9,7 +9,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private float _timeBuffer = 0.3f;
     [SerializeField]
-    private float _duration = 2.0f;
+    private float _attachDuration = 2.0f;
+    [SerializeField]
+    private float _distanceThreshold = 1.0f;
 
     private PiggyBack _bigPlayer;
     public PiggyBack BigPlayer
@@ -60,7 +62,10 @@ public class PlayerManager : MonoBehaviour
         switch (_piggyBackState)
         {
             case PiggyBackState.Detached:
-                StartCoroutine(TimerRoutine());
+                if (ArePlayersInRange())
+                {
+                    StartCoroutine(TimerRoutine());
+                }
                 break;
             case PiggyBackState.Attaching:
                 break;
@@ -118,9 +123,9 @@ public class PlayerManager : MonoBehaviour
         float elapsedTime = 0.0f;
         Vector3 startPosition = _smallPlayer.transform.position;
 
-        while (elapsedTime < _duration)
+        while (elapsedTime < _attachDuration)
         {
-            float t = elapsedTime / _duration;
+            float t = elapsedTime / _attachDuration;
             
             _smallPlayer.transform.position = Vector3.Lerp(startPosition, _bigPlayer.AttachTransform.position, t);
 
@@ -147,8 +152,22 @@ public class PlayerManager : MonoBehaviour
         var _smallPlayerRB = _smallPlayer.GetComponent<Rigidbody>();
         _smallPlayerRB.useGravity = true;
 
+        _smallPlayer.Launch();
+
         _piggyBackState = PiggyBackState.Detached;
         OnPlayersDetached?.Invoke();
+    }
+
+    private bool ArePlayersInRange()
+    {
+        float sqrDistance = Vector3.SqrMagnitude(_bigPlayer.transform.position - _smallPlayer.transform.position);
+
+        if (sqrDistance < (_distanceThreshold * _distanceThreshold))
+        {
+            return true;
+        }
+
+        return false;
     }
 }
 

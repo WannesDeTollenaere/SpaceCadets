@@ -327,6 +327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26324449da433347b3b4603e6197c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _attachTransform: {fileID: 0}
+  _launchForce: 1000
   OnPlayerPressedPiggyBack:
     m_PersistentCalls:
       m_Calls: []
