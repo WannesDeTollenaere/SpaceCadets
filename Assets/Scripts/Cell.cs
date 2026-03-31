@@ -1,3 +1,4 @@
+using SpaceCadets.Audio;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,8 +11,6 @@ public class Cell : MonoBehaviour, ICell
 
     [SerializeField]
     private GameObject _scannedVisual;
-
-    public UnityEvent OnWallDestroyed;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -52,7 +51,8 @@ public class Cell : MonoBehaviour, ICell
         if (_revealedPrefab != null)      
             Instantiate(_revealedPrefab, transform.position, transform.rotation);
 
-        OnWallDestroyed?.Invoke();
+        // This triggers as well for bombs and walls exploded, need sep functions to call this.
+        AudioEvents.WallExploded();
 
         Destroy(gameObject);
     }

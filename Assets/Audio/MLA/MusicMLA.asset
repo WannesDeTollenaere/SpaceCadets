@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: MusicMLA
   m_EditorClassIdentifier: Assembly-CSharp::SpaceCadets.Audio.MultiLayerAudioMusic
   m_pitchMinMax: {x: 1, y: 1}
-  m_layers: []
+  m_layers:
+  - m_clips:
+    - {fileID: 8300000, guid: d733a9861894de54b898fbfd080a8917, type: 3}
+    m_minMaxVolume: {x: 1, y: 1}
+    m_elementName: 0
+  - m_clips:
+    - {fileID: 8300000, guid: 9310448452a3e444789b8a4f282820d4, type: 3}
+    m_minMaxVolume: {x: 0, y: 0}
+    m_elementName: 1
