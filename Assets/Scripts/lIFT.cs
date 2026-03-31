@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Lift : MonoBehaviour, ICell
@@ -5,8 +6,7 @@ public class Lift : MonoBehaviour, ICell
     public bool IsActivated { get; private set; }
 
     [SerializeField]
-    private GameObject _ElevatorObject;
-
+    private Animator _ElevatorAnim;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,10 +14,11 @@ public class Lift : MonoBehaviour, ICell
         {
             Activate();
         }
+
     }
 
     public void Activate()
     {
-        IsActivated = true;
+        _ElevatorAnim.SetBool("IsElevated", true);
     }
 }
