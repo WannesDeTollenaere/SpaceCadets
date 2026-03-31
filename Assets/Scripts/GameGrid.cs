@@ -1,3 +1,6 @@
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 
 public class GameGrid : MonoBehaviour
@@ -14,12 +17,17 @@ public class GameGrid : MonoBehaviour
     [SerializeField]
     private GameObject _basicCellPrefab;
 
+    [SerializeField]
+    private bool _revealAll = false;
+
     private ICell[,] grid;
 
     private void Awake()
     {
         InitializeLogicalGrid();
-        RevealAll();
+
+        if (_revealAll)
+            RevealAll();
     }
 
     [ContextMenu("Generate grid")]
@@ -35,14 +43,20 @@ public class GameGrid : MonoBehaviour
             for (int y = 0; y < _height; y++)
             {
                 Vector3 spawnPosition = new Vector3(x * _cellSize, 0, y * _cellSize);
+                GameObject spawnedCell;
 
-                GameObject spawnedCell = Instantiate(_basicCellPrefab, spawnPosition, Quaternion.identity);
+#if UNITY_EDITOR
+                spawnedCell = (GameObject)PrefabUtility.InstantiatePrefab(_basicCellPrefab);
+                spawnedCell.transform.position = spawnPosition;
+                spawnedCell.transform.rotation = Quaternion.identity;
+#else
+                spawnedCell = Instantiate(_basicCellPrefab, spawnPosition, Quaternion.identity);
+#endif
+
                 spawnedCell.transform.SetParent(this.transform);
-
                 spawnedCell.name = $"Cell_{x}_{y}";
             }
         }
-
     }
 
     [ContextMenu("Clear grid")]
