@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace SpaceCadets.Audio
@@ -8,6 +9,7 @@ namespace SpaceCadets.Audio
 
         [SerializeField] private Vector2 m_pitchMinMax = Vector2.one;
         [SerializeField] private AudioLayer<T>[] m_layers;
+        private Coroutine m_activeCoroutine;
 
         public void PlayMultiLayerOnSource(AudioSource source)
         {
@@ -55,6 +57,24 @@ namespace SpaceCadets.Audio
             //Debug.Log($"Fade finished, restoring to: {startVolume}");
             source.Stop();
             source.volume = startVolume;
+        }
+
+        public void FadeInAndPlay(AudioSource source, MonoBehaviour caller, float targetVolume = 1f, float duration = 0.05f)
+        {
+            source.volume = 0f;
+            source.Play();
+            caller.StartCoroutine(FadeInCoroutine(source, targetVolume, duration));
+        }
+
+        private IEnumerator FadeInCoroutine(AudioSource source, float targetVolume, float duration)
+        {
+            for (float t = 0; t < duration; t += Time.deltaTime)
+            {
+                source.volume = Mathf.Lerp(0f, targetVolume, t / duration);
+                yield return null;
+            }
+
+            source.volume = targetVolume; 
         }
     }
 }
