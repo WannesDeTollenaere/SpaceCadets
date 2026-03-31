@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float _moveSpeed = 5.0f;
+    [SerializeField]
+    private float _rotationSpeed = 5.0f;
 
     private CharacterController _characterController;
     private Vector2 _moveInput;
@@ -56,9 +58,13 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        Vector3 moveVelocity = new Vector3(_moveInput.x, 0.0f, _moveInput.y) * _moveSpeed;
+        Vector3 moveDirection = new Vector3(_moveInput.x, 0.0f, _moveInput.y);
+        Vector3 moveVelocity = moveDirection * _moveSpeed;
 
         _characterController.Move(moveVelocity * Time.fixedDeltaTime);
+
+        Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.fixedDeltaTime);
     }
 
     private void ApplyGravity()
