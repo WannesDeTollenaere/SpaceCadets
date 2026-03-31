@@ -1,3 +1,4 @@
+using SpaceCadets.Audio;
 using UnityEngine;
 
 public class Lift : MonoBehaviour
@@ -8,8 +9,15 @@ public class Lift : MonoBehaviour
     [SerializeField]
     private float _ExtendSpeed;
 
+    [SerializeField] MultiLayerAudioEnvironment m_envMLA;
+    private AudioSource m_audioSource;
+
     private bool _IsExtended;
 
+    private void Awake()
+    {
+        m_audioSource = GetComponent<AudioSource>();
+    }
     private enum ExtendState
     {
         Down,
@@ -26,6 +34,7 @@ public class Lift : MonoBehaviour
 
         //beginsound
         Debug.Log("ELEVATOR GOING UP");
+        m_envMLA.PlayContainerElement(m_audioSource, EnvironmentElements.ElevatorUp);
 
     }
 
@@ -34,6 +43,7 @@ public class Lift : MonoBehaviour
         _State = ExtendState.MovingDown;
         //naarbenedensound
         Debug.Log("ELEVATOR GOING DOWN");
+        m_envMLA.PlayContainerElement(m_audioSource, EnvironmentElements.ElevatorDown);
 
     }
 
@@ -57,7 +67,7 @@ public class Lift : MonoBehaviour
             if (Vector3.Distance(_ElevatorAnim.localPosition, Vector3.zero) < 0.1)
             {
                 _State = ExtendState.Down;
-                //FINISH GOING UP SOUND
+                //FINISH GOING D SOUND
                 Debug.Log("ELEVATOR REACHED DOWN");
             }
         }

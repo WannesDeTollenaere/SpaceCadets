@@ -32,3 +32,15 @@ MonoBehaviour:
     - {fileID: 8300000, guid: c8c82b358d7eb274ca04f10982e98280, type: 3}
     m_minMaxVolume: {x: 1, y: 1}
     m_elementName: 2
+  - m_clips:
+    - {fileID: 8300000, guid: 59cd9ffc762f3a1468e970a050286a93, type: 3}
+    - {fileID: 8300000, guid: 211e99a5d90f6c6499b9169a1a60fd15, type: 3}
+    - {fileID: 8300000, guid: f6e0c6f50b722a443add4c20a6f21eca, type: 3}
+    m_minMaxVolume: {x: 1, y: 1}
+    m_elementName: 3
+  - m_clips:
+    - {fileID: 8300000, guid: f60c33c782cd8ce428fb5d9a7e653723, type: 3}
+    - {fileID: 8300000, guid: 4cf3707c40f6965499c38b7ba5b38b99, type: 3}
+    - {fileID: 8300000, guid: b82d02fcafc19704086fd5f63fc82ca7, type: 3}
+    m_minMaxVolume: {x: 1, y: 1}
+    m_elementName: 4

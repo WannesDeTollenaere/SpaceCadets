@@ -396,6 +396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3414762004359563511}
+  - component: {fileID: 1871204682060557215}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -423,6 +424,23 @@ Transform:
   - {fileID: 22502921618949063}
   m_Father: {fileID: 8827239805611083195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1871204682060557215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2947406143698008845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d51d2d848f6b34bbc92055881156ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  m_drumSource: {fileID: 8017617134605057596}
+  m_percussionSource: {fileID: 1815546573419828950}
+  m_bassSource: {fileID: 6383135072703878502}
+  m_padSource: {fileID: 5185538813455437441}
+  m_melodySource: {fileID: 5778817317052136720}
 --- !u!1 &3658272040352686995
 GameObject:
   m_ObjectHideFlags: 0
