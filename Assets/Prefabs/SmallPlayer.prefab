@@ -467,7 +467,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scanner
   _satellitePivot: {fileID: 3646119477526732119}
-  _rotationSpeed: 5
 --- !u!1001 &4260937891898744041
 PrefabInstance:
   m_ObjectHideFlags: 0

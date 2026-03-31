@@ -44,4 +44,9 @@ public class Scanner : MonoBehaviour
     {
         other.GetComponent<Cell>()?.Hide();
     }
+
+    public void Activate()
+    {
+
+    }
 }
