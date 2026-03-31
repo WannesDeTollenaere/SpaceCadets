@@ -30,5 +30,6 @@ public class PlayerJoin : MonoBehaviour
 
         _playerManager.BigPlayer = _bigPlayerPiggyBack;
         _playerManager.SmallPlayer = _smallPlayerPiggyBack;
+
     }
 }

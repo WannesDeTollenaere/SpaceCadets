@@ -11,6 +11,8 @@ public class Lift : MonoBehaviour, ICell
 
     public void Activate()
     {
+        Debug.Log("Kaas");
+
         _ElevatorAnim.SetBool("IsElevated", true);
     }
 
