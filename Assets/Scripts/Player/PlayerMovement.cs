@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -29,18 +30,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (transform.parent != null)
-        {
-            if (_isMoving)
-            {
-                _isMoving = false;
-
-                OnStoppedMoving?.Invoke();
-            }
-
-            return;
-        }
-
         MoveCharacter();
         ApplyGravity();
     }

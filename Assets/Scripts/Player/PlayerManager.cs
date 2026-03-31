@@ -1,9 +1,14 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField]
     private float _rotationSpeed = 100.0f;
+    [SerializeField]
+    private float _timeBuffer = 0.3f;
+    [SerializeField]
+    private float _duration = 2.0f;
 
     private PiggyBack _bigPlayer;
     public PiggyBack BigPlayer
@@ -18,16 +23,55 @@ public class PlayerManager : MonoBehaviour
         set { _smallPlayer = value; }
     }
 
+    private bool _playersAttached = false;
+
     private void Start()
     {
-        _bigPlayer.OnPlayerPressedPiggyBack.AddListener(StartPiggyBack);
-        _smallPlayer.OnPlayerPressedPiggyBack.AddListener(StartPiggyBack);
+        _bigPlayer.OnPlayerPressedPiggyBack.AddListener(AttachPlayers);
+        _smallPlayer.OnPlayerPressedPiggyBack.AddListener(AttachPlayers);
     }
 
     private void OnDestroy()
     {
-        _bigPlayer.OnPlayerPressedPiggyBack.RemoveListener(StartPiggyBack);
-        _smallPlayer.OnPlayerPressedPiggyBack.RemoveListener(StartPiggyBack);
+        _bigPlayer.OnPlayerPressedPiggyBack.RemoveListener(AttachPlayers);
+        _smallPlayer.OnPlayerPressedPiggyBack.RemoveListener(AttachPlayers);
+    }
+
+    private void AttachPlayers()
+    {
+        if (_playersAttached) return;
+
+        StartCoroutine(TimerRoutine());
+    }
+
+    IEnumerator TimerRoutine()
+    {
+        float timer = 0f;
+
+        while (timer < _timeBuffer)
+        {
+            bool allPlayersPressedPiggyBack = true;
+            if (!_bigPlayer.PressedPiggyBack || !_smallPlayer.PressedPiggyBack)
+            {
+                allPlayersPressedPiggyBack = false;
+            }
+
+            if (allPlayersPressedPiggyBack)
+            {
+                StartPiggyBack();
+
+                _bigPlayer.PressedPiggyBack = false;
+                _smallPlayer.PressedPiggyBack = false;
+
+                yield break;
+            }
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        _bigPlayer.PressedPiggyBack = false;
+        _smallPlayer.PressedPiggyBack = false;
     }
 
     private void StartPiggyBack()
@@ -38,6 +82,26 @@ public class PlayerManager : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
         _bigPlayer.transform.rotation = Quaternion.Slerp(_bigPlayer.transform.rotation, targetRotation, _rotationSpeed * Time.fixedDeltaTime);
         _smallPlayer.transform.rotation = Quaternion.Slerp(_smallPlayer.transform.rotation, targetRotation, _rotationSpeed * Time.fixedDeltaTime);
+
+        StartCoroutine(PiggyBackRoutine());
+    }
+
+    IEnumerator PiggyBackRoutine()
+    {
+        float elapsedTime = 0.0f;
+        Vector3 startPosition = _smallPlayer.transform.position;
+
+        while (elapsedTime < _duration)
+        {
+            float t = elapsedTime / _duration;
+            
+            _smallPlayer.transform.position = Vector3.Lerp(startPosition, _bigPlayer.transform.position, t);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        };
+
+        _smallPlayer.transform.position = _bigPlayer.transform.position;
     }
 }
 
