@@ -8,17 +8,14 @@ public class Lift : MonoBehaviour, ICell
     [SerializeField]
     private Animator _ElevatorAnim;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Activate();
-        }
-
-    }
 
     public void Activate()
     {
         _ElevatorAnim.SetBool("IsElevated", true);
+    }
+
+    public void Deactivate()
+    {
+        _ElevatorAnim.SetBool("IsElevated", false);
     }
 }
