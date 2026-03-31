@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Cell : MonoBehaviour, ICell
 {
@@ -9,6 +10,8 @@ public class Cell : MonoBehaviour, ICell
 
     [SerializeField]
     private GameObject _scannedVisual;
+
+    public UnityEvent OnWallDestroyed;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -48,6 +51,8 @@ public class Cell : MonoBehaviour, ICell
         CellState = ICell.State.Triggered;
         if (_revealedPrefab != null)      
             Instantiate(_revealedPrefab, transform.position, transform.rotation);
+
+        OnWallDestroyed?.Invoke();
 
         Destroy(gameObject);
     }
