@@ -7,15 +7,36 @@ public class Scanner : MonoBehaviour
 {
     [SerializeField]
     private Transform _satellitePivot;
-    //[SerializeField]
-    //private float _rotationSpeed = 5f;
 
-    //private CharacterController _characterController;
     private Vector2 _lookInput;
+
+    private bool _isActive = false;
+
+    private Collider _scanCollider;
+    private Renderer _scanRenderer;
 
 
     void Awake()
     {
+        _scanCollider = GetComponentInChildren<Collider>();
+        _scanCollider.enabled = false;
+
+        _scanRenderer = GetComponentInChildren<Renderer>();
+        _scanRenderer.enabled = false;
+    }
+
+    private void Update()
+    {
+        if (_isActive)
+        {
+            _scanCollider.enabled = true;
+            _scanRenderer.enabled = true;
+        }
+        else
+        {
+            _scanCollider.enabled = false;
+            _scanRenderer.enabled = false;
+        }
     }
 
     void FixedUpdate()
@@ -47,6 +68,10 @@ public class Scanner : MonoBehaviour
 
     public void Activate()
     {
-
+        _isActive = true;
+    }
+    public void Deactivate()
+    {
+        _isActive = false;
     }
 }
