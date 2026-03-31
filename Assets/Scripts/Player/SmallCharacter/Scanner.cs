@@ -8,6 +8,9 @@ public class Scanner : MonoBehaviour
     [SerializeField]
     private Transform _satellitePivot;
 
+    [SerializeField]
+    private Vector3 _raderScale;
+
     private Vector2 _lookInput;
 
     private bool _isActive = false;
@@ -29,12 +32,14 @@ public class Scanner : MonoBehaviour
     {
         if (_isActive)
         {
+
+            transform.localScale = _raderScale;
             _scanCollider.enabled = true;
             _scanRenderer.enabled = true;
         }
         else
         {
-            _scanCollider.enabled = false;
+            gameObject.transform.localScale = Vector3.zero;
             _scanRenderer.enabled = false;
         }
     }

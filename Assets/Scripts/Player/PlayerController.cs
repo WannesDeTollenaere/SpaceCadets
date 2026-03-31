@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
     }
     private void OnScan(InputAction.CallbackContext context)
     {
+        if (_scannerComp == null) return;
+
         if (context.ReadValueAsButton())
         {
             _scannerComp.Activate();
