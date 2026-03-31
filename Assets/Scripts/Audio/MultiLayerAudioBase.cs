@@ -41,12 +41,12 @@ namespace SpaceCadets.Audio
         }
         public void FadeOutAndStop(AudioSource source, MonoBehaviour caller, float duration = 0.05f)
         {
-            caller.StartCoroutine(FadeCoroutine(source, duration));
+            if (m_activeCoroutine != null) caller.StopCoroutine(m_activeCoroutine);
+            m_activeCoroutine = caller.StartCoroutine(FadeCoroutine(source, duration));
         }
 
         private IEnumerator FadeCoroutine(AudioSource source, float duration)
         {
-           
             float startVolume = source.volume;
             //Debug.Log($"Fade started, source.volume is: {source.volume}");
             for (float t = 0; t < duration; t += Time.deltaTime)
@@ -61,9 +61,10 @@ namespace SpaceCadets.Audio
 
         public void FadeInAndPlay(AudioSource source, MonoBehaviour caller, float targetVolume = 1f, float duration = 0.05f)
         {
+            if (m_activeCoroutine != null) caller.StopCoroutine(m_activeCoroutine);
             source.volume = 0f;
             source.Play();
-            caller.StartCoroutine(FadeInCoroutine(source, targetVolume, duration));
+            m_activeCoroutine = caller.StartCoroutine(FadeInCoroutine(source, targetVolume, duration));
         }
 
         private IEnumerator FadeInCoroutine(AudioSource source, float targetVolume, float duration)
