@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lift
   _ElevatorAnim: {fileID: 842079699628430567}
-  _ExtendSpeed: 1
+  _ExtendSpeed: 4
 --- !u!1001 &875126022190068492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b7491845a1823f45a4aab0e25fb58d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5b7491845a1823f45a4aab0e25fb58d0, type: 3}
       propertyPath: m_LocalPosition.z
