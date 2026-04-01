@@ -72,6 +72,7 @@ public class PlayerManager : MonoBehaviour
         _bigPlayer.OnPlayerPressedPiggyBack.AddListener(AttachPlayers);
         _smallPlayer.OnPlayerPressedPiggyBack.AddListener(AttachPlayers);
 
+
         if (_bigPlayer != null)
         {
             _currentCheckpoint = _bigPlayer.transform.position;
@@ -170,7 +171,7 @@ public class PlayerManager : MonoBehaviour
             var smallRB = _smallPlayer.GetComponent<Rigidbody>();
             if (smallRB != null) smallRB.useGravity = true;
 
-            _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
+            //_smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
 
             _piggyBackState = PiggyBackState.Detached;
             _isAttachCooldownActive = false;
@@ -213,6 +214,8 @@ public class PlayerManager : MonoBehaviour
                     if (_bigPlayer.PressedPiggyBack && _smallPlayer.PressedPiggyBack)
                     {
                         StartPiggyBack();
+                        _bigPlayer.PressedPiggyBack = false;
+                        _smallPlayer.PressedPiggyBack = false;
                     }
                 }
                 break;
