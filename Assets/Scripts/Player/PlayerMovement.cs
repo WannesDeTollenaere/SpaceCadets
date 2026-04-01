@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         MoveCharacter();
-        //ApplyGravity();
     }
 
     private void MoveCharacter()
@@ -62,26 +61,12 @@ public class PlayerMovement : MonoBehaviour
         Vector3 moveDirection = new Vector3(_moveInput.x, 0.0f, _moveInput.y);
         Vector3 moveVelocity = moveDirection * _walkSpeed;
 
-        //_characterController.Move(moveVelocity * Time.fixedDeltaTime);
         _rb.AddForce(moveVelocity);
         
 
         Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
         _rb.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.fixedDeltaTime);
     }
-
-    //private void ApplyGravity()
-    //{
-    //    const float GRAVITY = -18.0f;
-
-    //    _verticalSpeed += GRAVITY * Time.fixedDeltaTime;
-    //    _characterController.Move(_verticalSpeed * Vector3.up * Time.fixedDeltaTime);
-
-    //    if (_characterController.isGrounded)
-    //    {
-    //        _verticalSpeed = 0.0f;
-    //    }
-    //}
 
     public void Move(Vector2 input)
     {
@@ -96,16 +81,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        //if (Physics.SphereCast(_rb.position - _height * Vector3.down, 5.0f, Vector3.down, out var hitInfo))
-        //{
-        //    Debug.Log("walk");
-        //    _moveSpeed = _walkSpeed;
-        //}
-        //else
-        //{
-        //    Debug.Log("air");
-        //    _moveSpeed = _airSpeed;
-        //}
+        if (Physics.SphereCast(_rb.position - _height * Vector3.down, 5.0f, Vector3.down, out var hitInfo))
+        {
+            Debug.Log("walk");
+            _moveSpeed = _walkSpeed;
+        }
+        else
+        {
+            Debug.Log("air");
+            _moveSpeed = _airSpeed;
+        }
     }
 
     private void StopMovement()
