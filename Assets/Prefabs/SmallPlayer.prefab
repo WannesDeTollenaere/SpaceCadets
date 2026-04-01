@@ -648,6 +648,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8015599235687893533}
     - target: {fileID: 6253591637808629719, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
+      propertyPath: _height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253591637808629719, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
       propertyPath: _airSpeed
       value: 10
       objectReference: {fileID: 0}

@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float _moveSpeed = 20.0f;
     [SerializeField] private float _walkSpeed = 20.0f;
     [SerializeField] private float _airSpeed = 5.0f;
+    [SerializeField] private float _height = 5f;
 
     [SerializeField]
     private float _rotationSpeed = 5.0f;
@@ -95,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Physics.SphereCast(_rb.position - 2f * Vector3.down, 5.0f, Vector3.down, out var hitInfo))
+        if (Physics.SphereCast(_rb.position - _height * Vector3.down, 5.0f, Vector3.down, out var hitInfo))
         {
             _moveSpeed = _walkSpeed;
         }
