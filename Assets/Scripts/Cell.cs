@@ -51,9 +51,6 @@ public class Cell : MonoBehaviour, ICell
         if (_revealedPrefab != null)      
             Instantiate(_revealedPrefab, transform.position, transform.rotation);
 
-        // This triggers as well for bombs and walls exploded, need sep functions to call this.
-        AudioEvents.WallExploded();
-
         Destroy(gameObject);
     }
 }

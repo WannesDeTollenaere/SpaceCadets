@@ -152,6 +152,8 @@ MonoBehaviour:
   _timeBuffer: 0.3
   _attachDuration: 2
   _distanceThreshold: 1
+  _playersInRangeIndicator: {fileID: 0}
+  _rangeIndicatorHeight: 1
   OnPlayersAttached:
     m_PersistentCalls:
       m_Calls: []
@@ -673,7 +675,7 @@ PrefabInstance:
     - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1823167639}
+      objectReference: {fileID: 2057072465}
     - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -684,7 +686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Cell, Assembly-CSharp
+      value: ExplodableWall, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
       propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -808,17 +810,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98a169f69e5b0ab49b0b2a64ce6bdd47, type: 3}
---- !u!114 &1823167639 stripped
+--- !u!114 &2057072465 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3828242968821206528, guid: 98a169f69e5b0ab49b0b2a64ce6bdd47, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6920308958093313904, guid: 98a169f69e5b0ab49b0b2a64ce6bdd47, type: 3}
   m_PrefabInstance: {fileID: 1823167637}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f67cac63d773a345a5ae9559a06e9d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ee6bd08c759419419ec0e33de9b5998, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Cell
+  m_EditorClassIdentifier: Assembly-CSharp::ExplodableWall
 --- !u!1001 &3192409872652219824
 PrefabInstance:
   m_ObjectHideFlags: 0
