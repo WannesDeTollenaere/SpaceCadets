@@ -69,14 +69,18 @@ public class Scanner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<Cell>()?.Reveal();
-
-
+        if (other.GetComponent<Cell>())
+        {
+            other.GetComponent<Cell>().Reveal();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        other.GetComponent<Cell>()?.Hide();
+        if (other.GetComponent<Cell>())
+        {
+            other.GetComponent<Cell>().Hide();
+        }
     }
 
     public void Toggle()
