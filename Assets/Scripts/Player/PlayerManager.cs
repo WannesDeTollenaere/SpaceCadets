@@ -86,6 +86,12 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
+        if (_piggyBackState == PiggyBackState.Detached)
+        {
+
+        }
+
+
         if (_piggyBackState == PiggyBackState.Attached)
         {
             _smallPlayer.transform.SetPositionAndRotation(_bigPlayer.AttachTransform.position, _bigPlayer.AttachTransform.rotation);
@@ -204,7 +210,10 @@ public class PlayerManager : MonoBehaviour
             case PiggyBackState.Detached:
                 if (_arePlayersInRange)
                 {
-                    StartCoroutine(TimerRoutine());
+                    if (_bigPlayer.PressedPiggyBack && _smallPlayer.PressedPiggyBack)
+                    {
+                        StartPiggyBack();
+                    }
                 }
                 break;
             case PiggyBackState.Attaching:
@@ -222,10 +231,7 @@ public class PlayerManager : MonoBehaviour
         while (timer < _timeBuffer)
         {
             bool allPlayersPressedPiggyBack = true;
-            if (!_bigPlayer.PressedPiggyBack || !_smallPlayer.PressedPiggyBack)
-            {
-                allPlayersPressedPiggyBack = false;
-            }
+            
 
             if (allPlayersPressedPiggyBack)
             {
