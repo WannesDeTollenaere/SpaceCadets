@@ -72,6 +72,8 @@ public class Scanner : MonoBehaviour
         if (other.GetComponent<Cell>())
         {
             other.GetComponent<Cell>().Reveal();
+            //Show Bomb SFX
+
         }
     }
 
