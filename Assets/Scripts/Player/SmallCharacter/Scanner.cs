@@ -1,3 +1,4 @@
+using SpaceCadets.Audio;
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -17,6 +18,11 @@ public class Scanner : MonoBehaviour
 
     private Collider _scanCollider;
     private Renderer _scanRenderer;
+
+    [SerializeField] private MultiLayerAudioLilGuy m_lilGuyMLA;
+    [SerializeField] private AudioSource m_oneShotSource;
+    [SerializeField] private AudioSource m_loopSource;
+
 
 
     void Awake()
@@ -78,10 +84,14 @@ public class Scanner : MonoBehaviour
         if (_isActive)
         {
             //startsound
+            m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.ScanStart);
+            m_lilGuyMLA.PlayContainerElement(m_loopSource, LilGuyElements.ScanLoop,true,this);
         }
         else
         {
             // End Sound
+            m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.ScanEnd);
+            m_lilGuyMLA.FadeOutAndStop(m_loopSource, this);
         }
     }
 }

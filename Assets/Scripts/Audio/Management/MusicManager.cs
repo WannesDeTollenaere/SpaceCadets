@@ -34,7 +34,7 @@ public class MusicManager : MonoBehaviour
         m_musicMLA.PlayContainerElement(m_padSource, MusicElements.Pad, true);
         m_musicMLA.PlayContainerElement(m_melodySource, MusicElements.Melody, true);
 
-        StartCoroutine(FadeMixerVolume("MusicVolume", -40f, 0f, 4f));
+        StartCoroutine(FadeMixerVolume("MusicVolume", -40f, -8.0f, 4f));
     }
 
     private void OnEnable()
@@ -44,9 +44,12 @@ public class MusicManager : MonoBehaviour
 
     private IEnumerator FadeMixerVolume(string parameter, float fromDb, float toDb, float duration)
     {
+        float fromLinear = Mathf.Pow(10f, fromDb / 20f);
+        float toLinear = Mathf.Pow(10f, toDb / 20f);
+
         for (float t = 0; t < duration; t += Time.deltaTime)
         {
-            float linear = Mathf.Lerp(0f, 1f, t / duration);
+            float linear = Mathf.Lerp(fromLinear, toLinear, t / duration);
             float db = Mathf.Log10(Mathf.Max(linear, 0.0001f)) * 20f;
             m_mixer.SetFloat(parameter, db);
             yield return null;
