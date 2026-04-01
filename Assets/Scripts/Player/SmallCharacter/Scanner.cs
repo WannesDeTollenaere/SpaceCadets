@@ -55,12 +55,12 @@ public class Scanner : MonoBehaviour
     {
         if (_lookInput.x * _lookInput.x < float.Epsilon) return;
 
-        _satellitePivot.localRotation = Quaternion.identity;
+        _satellitePivot.rotation = Quaternion.identity;
 
         Vector3 lookDirection = new Vector3(_lookInput.x, 0.0f, _lookInput.y);
 
         Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
-        _satellitePivot.localRotation = targetRotation;
+        _satellitePivot.rotation = targetRotation;
     }
 
     public void Look(Vector2 input)
