@@ -765,6 +765,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8353394953277733429, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
       insertIndex: -1
       addedObject: {fileID: 886928598792243918}
+    - targetCorrespondingSourceObject: {fileID: 8353394953277733429, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5278799211302999603}
   m_SourcePrefab: {fileID: 100100000, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
 --- !u!4 &4301961421045438940 stripped
 Transform:
@@ -878,6 +881,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5278799211302999603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5245809680307496668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30dfbb6fe685dae42a27634c56b74820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _animator: {fileID: 5002751712316574957}
 --- !u!1001 &5076794163713361649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1088,6 +1104,25 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: -876546973899608171, guid: f72ff4cfce3a36a47b25c6b0edd01df1, type: 3}
+    - target: {fileID: 5866666021909216657, guid: daf4ca2ff09d8c543bbc20bb6d0ce55b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c06dd3dfe4ddecb47a464ceb689854f3, type: 2}
+    - target: {fileID: 5866666021909216657, guid: daf4ca2ff09d8c543bbc20bb6d0ce55b, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+        'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:RightArm'\n\tTransform
+        'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tTransform 'mixamorig:RightFoot'\n\tTransform
+        'mixamorig:Head'\n\tTransform 'mixamorig:LeftUpLeg'\n\tand more ...\n\tFrom
+        animation clip 'Idle'\n\tFrom animation clip 'Walking'\n\tFrom animation
+        clip 'Walking'"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201861872378780632, guid: daf4ca2ff09d8c543bbc20bb6d0ce55b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1095,6 +1130,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: daf4ca2ff09d8c543bbc20bb6d0ce55b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7764428592140662161}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: daf4ca2ff09d8c543bbc20bb6d0ce55b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5002751712316574957}
   m_SourcePrefab: {fileID: 100100000, guid: daf4ca2ff09d8c543bbc20bb6d0ce55b, type: 3}
 --- !u!4 &7458483893879800515 stripped
 Transform:
@@ -1129,3 +1167,25 @@ CapsuleCollider:
   m_Height: 1.0801433
   m_Direction: 1
   m_Center: {x: -0.004802525, y: 0.6036555, z: 0.014238521}
+--- !u!95 &5002751712316574957
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839090441556187257}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c06dd3dfe4ddecb47a464ceb689854f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
