@@ -24,6 +24,7 @@ public class SmallPlayerAnimationController : MonoBehaviour
             Debug.Log("No PlayerHealth found");
         }
         _playerHealth.OnPlayerDied.AddListener(() => _animator.SetBool("IsDead", true));
-        _playerHealth.OnPlayerRespawned.AddListener(() => _animator.SetBool("IsDead", false));
+        //_playerHealth.OnPlayerRespawned.AddListener(() => _animator.SetBool("IsDead", false));
+        PlayerManager.Instance.OnPlayersRespawned.AddListener(() => _animator.SetBool("IsDead", false));
     }
 }
