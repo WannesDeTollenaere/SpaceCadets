@@ -24,6 +24,7 @@ public class Scanner : MonoBehaviour
     [SerializeField] private AudioSource m_oneShotSource;
     [SerializeField] private AudioSource m_loopSource;
 
+    private Quaternion _currentWorldRotation = Quaternion.identity;
 
 
     void Awake()
@@ -53,14 +54,13 @@ public class Scanner : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_lookInput.x * _lookInput.x < float.Epsilon) return;
+        if (_lookInput.sqrMagnitude > 0.01f)
+        {
+            Vector3 lookDirection = new Vector3(_lookInput.x, 0.0f, _lookInput.y);
+            _currentWorldRotation = Quaternion.LookRotation(lookDirection);
+        }
 
-        //_satellitePivot.localRotation = Quaternion.identity;
-
-        Vector3 lookDirection = new Vector3(_lookInput.x, 0.0f, _lookInput.y);
-
-        Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
-        _satellitePivot.localRotation = targetRotation;
+        _satellitePivot.rotation = _currentWorldRotation;
     }
 
     public void Look(Vector2 input)
@@ -70,12 +70,15 @@ public class Scanner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<Cell>()?.Reveal();
+        Cell otherCell = other.GetComponent<Cell>();
 
-        if (other.GetComponent<Cell>().IsBomb())
+        if (otherCell)
         {
             //Show Bomb SFX
-            m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.BombShown);
+
+            if (otherCell.Reveal())
+                m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.BombShown);
+
         }
     }
 
@@ -87,21 +90,21 @@ public class Scanner : MonoBehaviour
         }
     }
 
-    public void Toggle()
+    public void Activate()
     {
-        _isActive = !_isActive;
+        _isActive = true;
 
-        if (_isActive)
-        {
-            //startsound
-            m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.ScanStart);
-            m_lilGuyMLA.PlayContainerElement(m_loopSource, LilGuyElements.ScanLoop,true,this);
-        }
-        else
-        {
-            // End Sound
-            m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.ScanEnd);
-            m_lilGuyMLA.FadeOutAndStop(m_loopSource, this);
-        }
+        //startsound
+        m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.ScanStart);
+        m_lilGuyMLA.PlayContainerElement(m_loopSource, LilGuyElements.ScanLoop, true, this);
+    }
+
+    public void Deactivate()
+    {
+        _isActive = false;
+
+        // End Sound
+        m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.ScanEnd);
+        m_lilGuyMLA.FadeOutAndStop(m_loopSource, this);
     }
 }

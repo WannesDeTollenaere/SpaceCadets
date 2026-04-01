@@ -18,6 +18,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float _distanceThreshold = 1.0f;
     [SerializeField] private PiggyBackInputHint _piggyBackInput;
     [SerializeField] private float _rangeIndicatorHeight = 1.0f;
+    [SerializeField] private GameObject _respawnVFX;
+    [SerializeField] private float _respawnTime = 2.0f;
 
     private bool _isShuttingDown = false;
 
@@ -51,9 +53,15 @@ public class PlayerManager : MonoBehaviour
     private PiggyBackState _piggyBackState = PiggyBackState.Detached;
     private bool _arePlayersInRange = false;
     private bool _isAttachCooldownActive = false;
+    private bool _isRespawning = false;
+    public bool IsRespawning
+    {
+        get { return _isRespawning; }
+    }
 
     public UnityEvent OnPlayersAttached;
     public UnityEvent OnPlayersDetached;
+    public UnityEvent OnPlayersRespawned;
 
     private void Awake()
     {
@@ -139,7 +147,16 @@ public class PlayerManager : MonoBehaviour
         if (_isShuttingDown) return;
         _totalLives--;
 
+        _isRespawning = true;
+
         OnHealthChanged?.Invoke(_totalLives);
+
+        StartCoroutine(RestartRoutine());
+    }
+
+    IEnumerator RestartRoutine()
+    {
+        yield return new WaitForSeconds(_respawnTime);
 
         if (_totalLives <= 0)
         {
@@ -148,7 +165,10 @@ public class PlayerManager : MonoBehaviour
         else
         {
             RespawnPlayers();
+            OnPlayersRespawned?.Invoke();
         }
+
+        _isRespawning = false;
     }
 
     private void RespawnPlayers()
@@ -157,6 +177,12 @@ public class PlayerManager : MonoBehaviour
 
         _bigPlayer.transform.position = _currentCheckpoint + new Vector3(-0.2f, 0, 0);
         _smallPlayer.transform.position = _currentCheckpoint + new Vector3(0.2f, 0, 0);
+
+        if(_respawnVFX)
+        {
+            Instantiate(_respawnVFX, _bigPlayer.transform);
+            Instantiate(_respawnVFX, _smallPlayer.transform);
+        }
 
         ResetRigidbody(_bigPlayer.GetComponent<Rigidbody>());
         ResetRigidbody(_smallPlayer.GetComponent<Rigidbody>());
@@ -171,7 +197,7 @@ public class PlayerManager : MonoBehaviour
             var smallRB = _smallPlayer.GetComponent<Rigidbody>();
             if (smallRB != null) smallRB.useGravity = true;
 
-            //_smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
+            _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Deactivate();
 
             _piggyBackState = PiggyBackState.Detached;
             _isAttachCooldownActive = false;
@@ -211,7 +237,7 @@ public class PlayerManager : MonoBehaviour
             case PiggyBackState.Detached:
                 if (_arePlayersInRange)
                 {
-                    if (_bigPlayer.PressedPiggyBack && _smallPlayer.PressedPiggyBack)
+                    if (_bigPlayer.PressedPiggyBack)
                     {
                         StartPiggyBack();
                         _bigPlayer.PressedPiggyBack = false;
@@ -288,7 +314,7 @@ public class PlayerManager : MonoBehaviour
 
         _piggyBackState = PiggyBackState.Attached;
 
-        _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
+        _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Activate();
 
         OnPlayersAttached?.Invoke();
     }
@@ -303,7 +329,7 @@ public class PlayerManager : MonoBehaviour
     }
     private void DetachPlayers()
     {
-        _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
+        _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Deactivate();
         _smallPlayer.transform.SetParent(null);
 
         var _smallPlayerRB = _smallPlayer.GetComponent<Rigidbody>();

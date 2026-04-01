@@ -10,14 +10,17 @@ public class PlayerMovement : MonoBehaviour
     private float _moveSpeed = 20.0f;
     [SerializeField] private float _walkSpeed = 20.0f;
     [SerializeField] private float _airSpeed = 5.0f;
+    [SerializeField] private float _height = 5f;
 
     [SerializeField]
     private float _rotationSpeed = 5.0f;
 
+    private PlayerHealth _health;
     private CharacterController _characterController;
     private Vector2 _moveInput;
     private bool _isMoving = false;
     //private float _verticalSpeed = 0.0f;
+    private bool _canMove = true;
 
     public UnityEvent OnStartedMoving;
     public UnityEvent OnStoppedMoving;
@@ -27,6 +30,14 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
+
+        _health = GetComponent<PlayerHealth>();
+        if (!_health)
+        {
+            Debug.LogError("No PlayerHealth component found.");
+        }
+        _health.OnPlayerDied.AddListener(StopMovement);
+        PlayerManager.Instance.OnPlayersRespawned.AddListener(() => _canMove = true);
     }
 
     private void FixedUpdate()
@@ -49,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Vector3 moveDirection = new Vector3(_moveInput.x, 0.0f, _moveInput.y);
-        Vector3 moveVelocity = moveDirection * _moveSpeed;
+        Vector3 moveVelocity = moveDirection * _walkSpeed;
 
         //_characterController.Move(moveVelocity * Time.fixedDeltaTime);
         _rb.AddForce(moveVelocity);
@@ -74,6 +85,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(Vector2 input)
     {
+        if (!_canMove) return;
+
         _moveInput = input;
 
         if (_moveInput.sqrMagnitude > float.Epsilon && !_isMoving)
@@ -83,13 +96,22 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Physics.SphereCast(_rb.position - 2f * Vector3.down, 5.0f, Vector3.down, out var hitInfo))
-        {
-            _moveSpeed = _walkSpeed;
-        }
-        else
-        {
-            _moveSpeed = _airSpeed;
-        }
+        //if (Physics.SphereCast(_rb.position - _height * Vector3.down, 5.0f, Vector3.down, out var hitInfo))
+        //{
+        //    Debug.Log("walk");
+        //    _moveSpeed = _walkSpeed;
+        //}
+        //else
+        //{
+        //    Debug.Log("air");
+        //    _moveSpeed = _airSpeed;
+        //}
+    }
+
+    private void StopMovement()
+    {
+        _moveInput = Vector2.zero;
+
+        _canMove = false;
     }
 }

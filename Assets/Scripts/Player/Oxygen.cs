@@ -28,6 +28,8 @@ public class Oxygen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerManager.Instance.IsRespawning) return;
+
         if (!_playermanager.ArePlayersInRange())
         {
             _currentMeter = Mathf.Max(0f, _currentMeter - _drainRate * Time.fixedDeltaTime);

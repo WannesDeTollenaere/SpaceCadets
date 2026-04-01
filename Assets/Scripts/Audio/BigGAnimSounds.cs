@@ -11,12 +11,12 @@ public class BigGAnimSounds : MonoBehaviour
     private void PlayBigGIdleSound()
     {
         m_bigGMLA.PlayContainerElement(m_oneshotSource, RobotElements.Idling);
-        Debug.Log("Play idle");
+       // Debug.Log("Play idle");
     }
 
     private void PlayBGFootstepSound()
     {
         m_bigGMLA.PlayContainerElement(m_footstepSource, RobotElements.Footstep);
-        Debug.Log("Play footstep");
+       // Debug.Log("Play footstep");
     }
 }

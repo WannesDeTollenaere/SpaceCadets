@@ -14,11 +14,12 @@ public class MusicManager : MonoBehaviour
     [SerializeField] AudioSource m_padSource;
     [SerializeField] AudioSource m_melodySource;
     [SerializeField] AudioSource m_envSource;
+    [SerializeField] AudioSource m_damageSource;
     [SerializeField] MultiLayerAudioMusic m_musicMLA;
     [SerializeField] MultiLayerAudioEnvironment m_envMLA;
     [SerializeField] AudioMixer m_mixer;
     private bool m_addedClapsStem = false;
-
+    private float m_lastDamagePlayTime = -3f;
 
     private void Awake()
     {
@@ -37,7 +38,7 @@ public class MusicManager : MonoBehaviour
         m_musicMLA.PlayContainerElement(m_padSource, MusicElements.Pad, true);
         m_musicMLA.PlayContainerElement(m_melodySource, MusicElements.Melody, true);
 
-        StartCoroutine(FadeMixerVolume("MusicVolume", -40f, -8.0f, 4f));
+        StartCoroutine(FadeMixerVolume("MusicVolume", -40f, -12.0f, 4f));
     }
 
     private void OnEnable()
@@ -47,7 +48,9 @@ public class MusicManager : MonoBehaviour
         AudioEvents.OnAttach += HandleAttach;
         AudioEvents.OnDetach += HandleDetach;
         AudioEvents.OnBombExplode += HandleBombExplode;
-        
+        AudioEvents.OnPlayerDamaged += HandlePlayerDamaged;
+        AudioEvents.OnPlayerRespawn += HandlePlayerRespawn;
+
     }
 
     private void OnDisable()
@@ -57,6 +60,8 @@ public class MusicManager : MonoBehaviour
         AudioEvents.OnAttach -= HandleAttach;
         AudioEvents.OnDetach -= HandleDetach;
         AudioEvents.OnBombExplode -= HandleBombExplode;
+        AudioEvents.OnPlayerDamaged -= HandlePlayerDamaged;
+        AudioEvents.OnPlayerRespawn -= HandlePlayerRespawn;
 
     }
     private IEnumerator FadeMixerVolume(string parameter, float fromDb, float toDb, float duration)
@@ -108,6 +113,29 @@ public class MusicManager : MonoBehaviour
     private void HandleBombExplode()
     {
         m_envMLA.PlayContainerElement(m_envSource, EnvironmentElements.BombExplode);
+
+    }
+    private void HandlePlayerDamaged()
+    {
+        if (Time.time - m_lastDamagePlayTime >= 3f)
+        {
+            m_lastDamagePlayTime = Time.time;
+            m_envMLA.PlayContainerElement(m_damageSource, EnvironmentElements.TakeDamage);
+            Debug.Log("Play damaged sound");
+        }
+
+
+    }
+
+    private void HandlePlayerRespawn()
+    {
+        if (Time.time - m_lastDamagePlayTime >= 3f)
+        {
+            m_lastDamagePlayTime = Time.time;
+            m_envMLA.PlayContainerElement(m_damageSource, EnvironmentElements.Respawn);
+            Debug.Log("Play respawn sound");
+        }
+
 
     }
 
