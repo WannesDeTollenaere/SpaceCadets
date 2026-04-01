@@ -11,7 +11,7 @@ public class LilGAnimSounds : MonoBehaviour
     public void PlayLilGDeadSound()
     {
         m_lilGMLA.PlayContainerElement(m_oneshotSource, LilGuyElements.Dead);
-        Debug.Log("Play idle");
+        Debug.Log("Play lil G Ded");
     }
 
     public void PlayLGFootstepSound()
@@ -19,7 +19,9 @@ public class LilGAnimSounds : MonoBehaviour
         if (!m_footstepSource.isPlaying)
         {
             m_lilGMLA.PlayContainerElement(m_footstepSource, LilGuyElements.Footstep);
-            Debug.Log("Play lil footstep");
+           // Debug.Log("Play lil footstep");
         }
     }
+
+    
 }

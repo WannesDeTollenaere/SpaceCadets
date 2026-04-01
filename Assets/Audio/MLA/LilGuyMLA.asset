@@ -53,3 +53,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: b8e024a26e44a42429d78be62f210a94, type: 3}
     m_minMaxVolume: {x: 0.3, y: 0.5}
     m_elementName: 3
+  - m_clips:
+    - {fileID: 8300000, guid: 8c1be55713c90e74286f1b4635bf3fe4, type: 3}
+    - {fileID: 8300000, guid: ae460fc9e358b334eb1b72c8d423216d, type: 3}
+    m_minMaxVolume: {x: 1, y: 1}
+    m_elementName: 7
