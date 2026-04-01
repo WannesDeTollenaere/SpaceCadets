@@ -33,7 +33,6 @@ public class Lift : MonoBehaviour
         _State = ExtendState.MovingUp;
 
         //beginsound
-        Debug.Log("ELEVATOR GOING UP");
         m_envMLA.PlayContainerElement(m_audioSource, EnvironmentElements.ElevatorUp);
         AudioEvents.ElevatorUp();
 
@@ -43,7 +42,6 @@ public class Lift : MonoBehaviour
     {
         _State = ExtendState.MovingDown;
         //naarbenedensound
-        Debug.Log("ELEVATOR GOING DOWN");
         m_envMLA.PlayContainerElement(m_audioSource, EnvironmentElements.ElevatorDown);
 
     }
@@ -55,21 +53,21 @@ public class Lift : MonoBehaviour
         if (_State == ExtendState.MovingUp)
         {
             _ElevatorAnim.localPosition = Vector3.Slerp(_ElevatorAnim.localPosition, Vector3.up, _ExtendSpeed * Time.deltaTime);
-            if (Vector3.Distance(_ElevatorAnim.localPosition, Vector3.up) < 0.1)
+            if (Vector3.Distance(_ElevatorAnim.localPosition, Vector3.up) < 0.05)
             {
                 _State = ExtendState.Up;
+                _ElevatorAnim.localPosition = Vector3.up;
                 //FINISH GOING UP SOUND
-                Debug.Log("ELEVATOR REACHED UP");
             }
 
         } else if ( _State == ExtendState.MovingDown)
         {
             _ElevatorAnim.localPosition = Vector3.Slerp(_ElevatorAnim.localPosition, Vector3.zero, _ExtendSpeed * Time.deltaTime);
-            if (Vector3.Distance(_ElevatorAnim.localPosition, Vector3.zero) < 0.1)
+            if (Vector3.Distance(_ElevatorAnim.localPosition, Vector3.zero) < 0.05)
             {
                 _State = ExtendState.Down;
+                _ElevatorAnim.localPosition = Vector3.zero;
                 //FINISH GOING D SOUND
-                Debug.Log("ELEVATOR REACHED DOWN");
             }
         }
     }
