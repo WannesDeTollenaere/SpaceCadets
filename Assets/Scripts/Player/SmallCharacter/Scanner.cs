@@ -24,6 +24,7 @@ public class Scanner : MonoBehaviour
     [SerializeField] private AudioSource m_oneShotSource;
     [SerializeField] private AudioSource m_loopSource;
 
+    private Quaternion _currentWorldRotation = Quaternion.identity;
 
 
     void Awake()
@@ -53,14 +54,13 @@ public class Scanner : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_lookInput.x * _lookInput.x < float.Epsilon) return;
+        if (_lookInput.sqrMagnitude > 0.01f)
+        {
+            Vector3 lookDirection = new Vector3(_lookInput.x, 0.0f, _lookInput.y);
+            _currentWorldRotation = Quaternion.LookRotation(lookDirection);
+        }
 
-        _satellitePivot.rotation = Quaternion.identity;
-
-        Vector3 lookDirection = new Vector3(_lookInput.x, 0.0f, _lookInput.y);
-
-        Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
-        _satellitePivot.rotation = targetRotation;
+        _satellitePivot.rotation = _currentWorldRotation;
     }
 
     public void Look(Vector2 input)
@@ -70,8 +70,6 @@ public class Scanner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
-
         Cell otherCell = other.GetComponent<Cell>();
 
         if (otherCell)
