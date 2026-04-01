@@ -5,6 +5,7 @@ public class Oxygen : MonoBehaviour
     [SerializeField] private float _drainRate = 0.3f;
 
     private PlayerManager _playermanager;
+    private PlayerJoin _playerJoin;
 
     private float _currentMeter = 1f;
     private float _maxMeter = 1f;
@@ -24,6 +25,15 @@ public class Oxygen : MonoBehaviour
         if (!_playermanager.ArePlayersInRange())
         {
             _currentMeter = Mathf.Max(0f, _currentMeter - _drainRate * Time.fixedDeltaTime);
+        }
+        else
+        {
+            _currentMeter = _maxMeter;
+        }
+
+        if (_currentMeter <= 0)
+        {
+            Destroy(_playerJoin.SmallPlayer);
         }
     }
 }
