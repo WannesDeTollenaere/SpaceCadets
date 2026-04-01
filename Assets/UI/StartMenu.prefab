@@ -256,6 +256,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 8535713066701454216, guid: a7c6cfc285e6001499a68ccfddfc1162, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8744409452049294883, guid: a7c6cfc285e6001499a68ccfddfc1162, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
