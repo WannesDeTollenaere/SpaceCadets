@@ -74,5 +74,14 @@ public class Scanner : MonoBehaviour
     public void Toggle()
     {
         _isActive = !_isActive;
+
+        if (_isActive)
+        {
+            //startsound
+        }
+        else
+        {
+            // End Sound
+        }
     }
 }

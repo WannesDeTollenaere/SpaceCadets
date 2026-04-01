@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace SpaceCadets.Audio
 
         [SerializeField] private Vector2 m_pitchMinMax = Vector2.one;
         [SerializeField] private AudioLayer<T>[] m_layers;
-        private Coroutine m_activeCoroutine;
+        private Dictionary<AudioSource, Coroutine> m_activeCoroutines = new Dictionary<AudioSource, Coroutine>();
 
         public void PlayMultiLayerOnSource(AudioSource source)
         {
@@ -20,29 +21,38 @@ namespace SpaceCadets.Audio
             }
         }
 
-        public void PlayContainerElement(AudioSource source, T element, bool shouldLoop = false)
+        public void PlayContainerElement(AudioSource source, T element, bool shouldLoop = false, MonoBehaviour caller = null, float fadeInDuration = 0f, float targetVolume = 1f)
         {
             foreach (AudioLayer<T> layer in m_layers)
             {
                 if (layer.ElementName.Equals(element))
                 {
-                    if(!source.isPlaying)
+                 
+                    if (!source.isPlaying)
                     {
                         source.pitch = Random.Range(m_pitchMinMax.x, m_pitchMinMax.y);
-
                     }
                     source.loop = shouldLoop;
-                    layer.PlayOnSource(source,shouldLoop);
+
+                    if (caller != null && fadeInDuration > 0f)
+                    {
+                        layer.PlayOnSource(source, shouldLoop);
+                        FadeInAndPlay(source, caller, targetVolume, fadeInDuration);
+                    }
+                    else
+                    {
+                        layer.PlayOnSource(source, shouldLoop);
+                    }
+
                     return;
                 }
             }
-
-            //Debug.LogWarning($"AudioLayer with element {element} not found!");
         }
         public void FadeOutAndStop(AudioSource source, MonoBehaviour caller, float duration = 0.05f)
         {
-            if (m_activeCoroutine != null) caller.StopCoroutine(m_activeCoroutine);
-            m_activeCoroutine = caller.StartCoroutine(FadeCoroutine(source, duration));
+            if (m_activeCoroutines.TryGetValue(source, out Coroutine existing))
+                caller.StopCoroutine(existing);
+            m_activeCoroutines[source] = caller.StartCoroutine(FadeCoroutine(source, duration));
         }
 
         private IEnumerator FadeCoroutine(AudioSource source, float duration)
@@ -61,10 +71,11 @@ namespace SpaceCadets.Audio
 
         public void FadeInAndPlay(AudioSource source, MonoBehaviour caller, float targetVolume = 1f, float duration = 0.05f)
         {
-            if (m_activeCoroutine != null) caller.StopCoroutine(m_activeCoroutine);
+            if (m_activeCoroutines.TryGetValue(source, out Coroutine existing))
+                caller.StopCoroutine(existing);
             source.volume = 0f;
-            source.Play();
-            m_activeCoroutine = caller.StartCoroutine(FadeInCoroutine(source, targetVolume, duration));
+           // source.Play();
+            m_activeCoroutines[source] = caller.StartCoroutine(FadeInCoroutine(source, targetVolume, duration));
         }
 
         private IEnumerator FadeInCoroutine(AudioSource source, float targetVolume, float duration)
