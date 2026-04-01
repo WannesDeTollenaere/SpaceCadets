@@ -37,7 +37,7 @@ public class BombLogic : MonoBehaviour, ICell
 
     public void Activate()
     {
-        m_EnvMLA.PlayContainerElement(m_audioSource, EnvironmentElements.BombExplode);
+        AudioEvents.BombExlpode();
        
         // Add 0.5s delay before visual shows up here
         CellState = ICell.State.Triggered;

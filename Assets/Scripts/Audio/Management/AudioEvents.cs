@@ -15,6 +15,8 @@ namespace SpaceCadets.Audio
         public static void Detach() => OnDetach?.Invoke();
         public static event Action OnAttach;
         public static void Attach() => OnAttach?.Invoke();
+        public static event Action OnBombExplode;
+        public static void BombExlpode() => OnBombExplode?.Invoke();
 
     }
 }
