@@ -56,4 +56,9 @@ public class Cell : MonoBehaviour, ICell
 
         Destroy(gameObject);
     }
+
+    public bool IsBomb()
+    {
+        return _revealedPrefab != null;
+    }
 }
