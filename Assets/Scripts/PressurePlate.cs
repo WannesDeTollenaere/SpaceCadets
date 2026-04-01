@@ -44,7 +44,7 @@ public class PressurePlate : MonoBehaviour
     {
         if (_IsDown)
         {
-            _VisualPosition.localPosition = Vector3.Slerp(_VisualPosition.localPosition, Vector3.down * -0.2f, flipDownSpeed * Time.deltaTime);
+            _VisualPosition.localPosition = Vector3.Slerp(_VisualPosition.localPosition, Vector3.down * 0.1f, flipDownSpeed * Time.deltaTime);
         }
         else if (!_IsDown) {
             _VisualPosition.localPosition = Vector3.Slerp(_VisualPosition.localPosition, Vector3.zero, flipDownSpeed * Time.deltaTime);
