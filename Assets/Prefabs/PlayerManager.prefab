@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6551686002450399090}
   - component: {fileID: 3566529644679475934}
   - component: {fileID: 6647343059643233470}
+  - component: {fileID: 8528875987576248558}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -70,3 +71,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _inputImage: {fileID: 0}
+--- !u!114 &8528875987576248558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826875258792840524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b85ab46d1aecc4c801d5c7de94fcbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Oxygen
+  _drainRate: 0.05
