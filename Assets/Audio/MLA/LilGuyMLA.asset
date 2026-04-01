@@ -18,12 +18,12 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 539de0e13c77564438fde8a53839aaf6, type: 3}
     - {fileID: 8300000, guid: 53461f09c58aa7843bbbd97dd0a41d75, type: 3}
     m_minMaxVolume: {x: 1, y: 1}
-    m_elementName: 7
+    m_elementName: 5
   - m_clips:
     - {fileID: 8300000, guid: 9133738d4486d6141b378f1b17666fd4, type: 3}
     - {fileID: 8300000, guid: 1d062535590e9ae4aaf762b36ba66f45, type: 3}
     m_minMaxVolume: {x: 1, y: 1}
-    m_elementName: 8
+    m_elementName: 6
   - m_clips:
     - {fileID: 8300000, guid: b3f05aca33a68b44ca77f6251e36ef9c, type: 3}
     - {fileID: 8300000, guid: ffecb74b1ba9387449a4c67bf22167ce, type: 3}
@@ -46,3 +46,10 @@ MonoBehaviour:
     - {fileID: 8300000, guid: e2a8032516fda32498a5965f1d17dbee, type: 3}
     m_minMaxVolume: {x: 1, y: 1}
     m_elementName: 4
+  - m_clips:
+    - {fileID: 8300000, guid: ac78c9aee435a204592c93eaff44e845, type: 3}
+    - {fileID: 8300000, guid: af33e0afa0a5f9040b3d93e19a839a13, type: 3}
+    - {fileID: 8300000, guid: f1bfaa4977021d2439054389470bd031, type: 3}
+    - {fileID: 8300000, guid: b8e024a26e44a42429d78be62f210a94, type: 3}
+    m_minMaxVolume: {x: 0.3, y: 0.5}
+    m_elementName: 3

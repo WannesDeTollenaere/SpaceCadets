@@ -1169,6 +1169,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: daf4ca2ff09d8c543bbc20bb6d0ce55b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5002751712316574957}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: daf4ca2ff09d8c543bbc20bb6d0ce55b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3064868347277957138}
   m_SourcePrefab: {fileID: 100100000, guid: daf4ca2ff09d8c543bbc20bb6d0ce55b, type: 3}
 --- !u!4 &7458483893879800515 stripped
 Transform:
@@ -1225,3 +1228,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3064868347277957138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839090441556187257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe1e875c025aea46a8f41fc8eda0791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LilGAnimSounds
+  m_lilGMLA: {fileID: 11400000, guid: 0862f78c71edef6468db9f003afc77e1, type: 2}
+  m_oneshotSource: {fileID: 2847901758316287225}
+  m_footstepSource: {fileID: 8015599235687893533}
