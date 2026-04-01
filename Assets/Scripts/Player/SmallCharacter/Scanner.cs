@@ -71,12 +71,8 @@ public class Scanner : MonoBehaviour
         other.GetComponent<Cell>()?.Hide();
     }
 
-    public void Activate()
+    public void Toggle()
     {
-        _isActive = true;
-    }
-    public void Deactivate()
-    {
-        _isActive = false;
+        _isActive = !_isActive;
     }
 }

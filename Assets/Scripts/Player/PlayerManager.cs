@@ -30,12 +30,15 @@ public class PlayerManager : MonoBehaviour
         set { _smallPlayer = value; }
     }
 
+    private Scanner _scanner;
+
     public enum PiggyBackState
     {
         Detached,
         Attaching,
         Attached
     }
+
     private PiggyBackState _piggyBackState = PiggyBackState.Detached;
 
     private bool _arePlayersInRange = false;
@@ -176,11 +179,16 @@ public class PlayerManager : MonoBehaviour
         _smallPlayerRB.useGravity = false;
 
         _piggyBackState = PiggyBackState.Attached;
+        
+        _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
+
         OnPlayersAttached?.Invoke();
     }
 
     private void DetachPlayers()
     {
+        _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
+
         _smallPlayer.transform.SetParent(null);
 
         var _smallPlayerRB = _smallPlayer.GetComponent<Rigidbody>();
@@ -191,6 +199,7 @@ public class PlayerManager : MonoBehaviour
         _isAttachCooldownActive = true;
         _piggyBackState = PiggyBackState.Detached;
         OnPlayersDetached?.Invoke();
+
 
         StartCoroutine(AttachCooldownRoutine());
     }
