@@ -44,12 +44,16 @@ public class MusicManager : MonoBehaviour
     {
         AudioEvents.OnWallExploded += HandleWallExplosion;
         AudioEvents.OnElevatorUp += HandleElevatorUp;
+        AudioEvents.OnAttach += HandleAttach;
+        AudioEvents.OnDetach += HandleDetach;
     }
 
     private void OnDisable()
     {
         AudioEvents.OnWallExploded -= HandleWallExplosion;
         AudioEvents.OnElevatorUp -= HandleElevatorUp;
+        AudioEvents.OnAttach -= HandleAttach;
+        AudioEvents.OnDetach -= HandleDetach;
     }
     private IEnumerator FadeMixerVolume(string parameter, float fromDb, float toDb, float duration)
     {
@@ -70,7 +74,7 @@ public class MusicManager : MonoBehaviour
     {
         m_musicMLA.FadeInAndPlay(m_melodySource, this, 1, 10.0f);
         m_envMLA.PlayContainerElement(m_envSource, EnvironmentElements.WallExplode);
-        Debug.Log("HandleWall Explosion");
+        Debug.Log("Fade in melody");
     }
     private void HandleElevatorUp()
     {
@@ -82,6 +86,22 @@ public class MusicManager : MonoBehaviour
         }
        
     }
+
+    private void HandleAttach()
+    {
+        m_musicMLA.FadeOutAndStop(m_percussionTomsSource, this, 2.0f);
+            Debug.Log("Fade out Toms");
+
+    }
+
+    private void HandleDetach()
+    {
+        m_musicMLA.FadeInAndPlay(m_percussionTomsSource, this, 1, 5.0f);
+        Debug.Log("Fade In Toms");
+
+    }
+
+
 
 
 
