@@ -1281,29 +1281,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2016234510}
     m_Modifications:
-    - target: {fileID: 842079699628430567, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 842079699628430567, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 842079699628430567, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 842079699628430567, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
     - target: {fileID: 935503268123297313, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.48959
       objectReference: {fileID: 0}
     - target: {fileID: 935503268123297313, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.14999998
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 935503268123297313, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8152,7 +8136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0dd756ef03ba534469fffd7368c6a6e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.14
+      value: -2.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0dd756ef03ba534469fffd7368c6a6e6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14420,6 +14404,34 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 925972581}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Activate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExplodableWall, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8205043741313108650, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5
@@ -17293,6 +17305,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98a169f69e5b0ab49b0b2a64ce6bdd47, type: 3}
+--- !u!114 &925972581 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6920308958093313904, guid: 98a169f69e5b0ab49b0b2a64ce6bdd47, type: 3}
+  m_PrefabInstance: {fileID: 925972580}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee6bd08c759419419ec0e33de9b5998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExplodableWall
 --- !u!1001 &927577483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19040,29 +19063,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2016234510}
     m_Modifications:
-    - target: {fileID: 842079699628430567, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 842079699628430567, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 842079699628430567, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 842079699628430567, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
     - target: {fileID: 935503268123297313, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.51041
       objectReference: {fileID: 0}
     - target: {fileID: 935503268123297313, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.14999998
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 935503268123297313, guid: 0655b54e435297d4995d44a7e17a2230, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34013,6 +34020,34 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1902689983}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Activate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExplodableWall, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899213878600646484, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
+      propertyPath: OnPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8205043741313108650, guid: 7436d95943b1cc6468121e5389276f22, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5
@@ -40311,6 +40346,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98a169f69e5b0ab49b0b2a64ce6bdd47, type: 3}
+--- !u!114 &1902689983 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6920308958093313904, guid: 98a169f69e5b0ab49b0b2a64ce6bdd47, type: 3}
+  m_PrefabInstance: {fileID: 1902689982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee6bd08c759419419ec0e33de9b5998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExplodableWall
 --- !u!1001 &1905841245
 PrefabInstance:
   m_ObjectHideFlags: 0
