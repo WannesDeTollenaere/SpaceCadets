@@ -48574,6 +48574,10 @@ PrefabInstance:
       value: PlayerManager
       objectReference: {fileID: 0}
     - target: {fileID: 3566529644679475934, guid: b70e7346dda9ecd49b3070f748376ef3, type: 3}
+      propertyPath: _distanceThreshold
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566529644679475934, guid: b70e7346dda9ecd49b3070f748376ef3, type: 3}
       propertyPath: _gameOverSceneName
       value: LoseScene
       objectReference: {fileID: 0}

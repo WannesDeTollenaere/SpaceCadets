@@ -11,8 +11,6 @@ public class PlayerHealth : MonoBehaviour
     {
         if (PlayerManager.Instance != null)
         {
-            Debug.Log("Kill Player");
-
             OnPlayerDied?.Invoke();
             AudioEvents.PlayerDamage();
             PlayerManager.Instance.PlayerDied();

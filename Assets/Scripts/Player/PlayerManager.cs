@@ -176,18 +176,22 @@ public class PlayerManager : MonoBehaviour
     {
         ForceDetachForRespawn();
         AudioEvents.PlayerRespawn();
-        _bigPlayer.transform.position = _currentCheckpoint + new Vector3(-0.2f, 0, 0);
-        _smallPlayer.transform.position = _currentCheckpoint + new Vector3(0.2f, 0, 0);
+        var rbBig = _bigPlayer.GetComponent<Rigidbody>();
+        var rbSmall = _smallPlayer.GetComponent<Rigidbody>();
+        rbBig.position = _currentCheckpoint + new Vector3(-0.2f, 0, 0);
+        rbSmall.position = _currentCheckpoint + new Vector3(0.2f, 0, 0);
+       
 
-        if(_respawnVFX)
+
+        if (_respawnVFX)
         {
             Instantiate(_respawnVFX, _bigPlayer.transform);
             Instantiate(_respawnVFX, _smallPlayer.transform);
             
         }
 
-        ResetRigidbody(_bigPlayer.GetComponent<Rigidbody>());
-        ResetRigidbody(_smallPlayer.GetComponent<Rigidbody>());
+        ResetRigidbody(rbBig);
+        ResetRigidbody(rbSmall);
     }
 
     private void ForceDetachForRespawn()

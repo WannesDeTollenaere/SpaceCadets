@@ -536,10 +536,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3078932343981036959, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8523541462627896469, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 513766937164988529, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 1600700754027521536}
     - targetCorrespondingSourceObject: {fileID: 513766937164988529, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
       insertIndex: -1
@@ -690,10 +691,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: -0.14}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &2341925927240502370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,7 +738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42915e3616f0e87448164740917124e3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.175
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42915e3616f0e87448164740917124e3, type: 3}
       propertyPath: m_LocalRotation.w
