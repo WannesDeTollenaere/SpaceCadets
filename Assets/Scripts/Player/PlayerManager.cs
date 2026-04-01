@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private float _distanceThreshold = 1.0f;
     [SerializeField]
-    private GameObject _playersInRangeIndicator;
+    private PiggyBackInputHint _piggyBackInput;
     [SerializeField]
     private float _rangeIndicatorHeight = 1.0f;
 
@@ -75,22 +75,23 @@ public class PlayerManager : MonoBehaviour
             _arePlayersInRange = false;
         }
 
-        if (_playersInRangeIndicator)
+        if (_piggyBackInput)
         {
             if (_arePlayersInRange && _piggyBackState == PiggyBackState.Detached)
             {
                 var playersPositionCenter = (_bigPlayer.transform.position + _smallPlayer.transform.position) / 2.0f;
-                _playersInRangeIndicator.transform.position = new Vector3(
+                _piggyBackInput.SetPosition(new Vector3(
                     playersPositionCenter.x,
                     playersPositionCenter.y + _rangeIndicatorHeight,
                     playersPositionCenter.z
+                    )
                 );
 
-                _playersInRangeIndicator.SetActive(true);
+                _piggyBackInput.Show();
             }
             else
             {
-                _playersInRangeIndicator.SetActive(false);
+                _piggyBackInput.Hide();
             }
         }
     }

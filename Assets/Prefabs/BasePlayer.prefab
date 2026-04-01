@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 7874172096305069630}
   - component: {fileID: 6253591637808629719}
   - component: {fileID: 5932172195088758204}
+  - component: {fileID: 4240214100606495449}
   m_Layer: 0
   m_Name: BasePlayer
   m_TagString: Player
@@ -237,7 +238,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 14e9efe1-c519-4212-9f10-33c85bd6e894
-    m_ActionName: 'Player/Scan[/XInputControllerWindows/rightShoulder,/Keyboard/r]'
+    m_ActionName: Player/Scan
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -316,11 +317,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _attachTransform: {fileID: 0}
-  _launchForce: 400
-  _launchUpFactor: 1.5
+  _launchForce: 1000
+  _launchUpFactor: 0.5
   OnPlayerPressedPiggyBack:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4240214100606495449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8353394953277733429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51aaa21736af1324fb8d335fbe33bdd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCameraJoin
 --- !u!1 &8523541462627896469
 GameObject:
   m_ObjectHideFlags: 0
