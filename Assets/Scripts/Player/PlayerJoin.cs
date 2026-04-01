@@ -3,35 +3,19 @@ using UnityEngine;
 
 public class PlayerJoin : MonoBehaviour
 {
-    [SerializeField]
-    private Transform _bigPlayerSpawn;
-    [SerializeField]
-    private Transform _smallPlayerSpawn;
-    [SerializeField]
-    private GameObject _bigPlayerPrefab;
-    [SerializeField]
-    private GameObject _smallPlayerPrefab;
+    [SerializeField] private Transform _bigPlayerSpawn;
+    [SerializeField] private Transform _smallPlayerSpawn;
+    [SerializeField] private GameObject _bigPlayerPrefab;
+    [SerializeField] private GameObject _smallPlayerPrefab;
 
-    [SerializeField]
-    private PlayerManager _playerManager;
-
-    [SerializeField]
-    private CameraFollow _camera;
+    [SerializeField] private PlayerManager _playerManager;
+    [SerializeField] private CameraFollow _camera;
 
     private GameObject _bigPlayer;
     private GameObject _smallPlayer;
 
-    public GameObject BigPlayer
-    {
-        get { return _bigPlayer; }
-    }
-    public GameObject SmallPlayer
-    {
-        get { return _smallPlayer; }
-    }
-
-    private PiggyBack _bigPlayerPiggyBack;
-    private PiggyBack _smallPlayerPiggyBack;
+    public GameObject BigPlayer => _bigPlayer;
+    public GameObject SmallPlayer => _smallPlayer;
 
     private void Awake()
     {
@@ -41,10 +25,10 @@ public class PlayerJoin : MonoBehaviour
         _camera.Player1 = _bigPlayer;
         _camera.Player2 = _smallPlayer;
 
-        _bigPlayerPiggyBack = _bigPlayer.GetComponent<PiggyBack>();
-        _smallPlayerPiggyBack = _smallPlayer.GetComponent<PiggyBack>();
+        PiggyBack bigPiggy = _bigPlayer.GetComponent<PiggyBack>();
+        PiggyBack smallPiggy = _smallPlayer.GetComponent<PiggyBack>();
 
-        _playerManager.BigPlayer = _bigPlayerPiggyBack;
-        _playerManager.SmallPlayer = _smallPlayerPiggyBack;
+        _playerManager.BigPlayer = bigPiggy;
+        _playerManager.SmallPlayer = smallPiggy;
     }
 }

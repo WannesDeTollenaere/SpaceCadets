@@ -50,7 +50,11 @@ public class Oxygen : MonoBehaviour
             {
                 if (_playerJoin.SmallPlayer)
                 {
-                    Destroy(_playerJoin.SmallPlayer);
+                    PlayerHealth health = _playerJoin.SmallPlayer.GetComponent<PlayerHealth>();
+                    if (health != null)
+                    {
+                        health.Die();
+                    }
                 }
             }
         }
