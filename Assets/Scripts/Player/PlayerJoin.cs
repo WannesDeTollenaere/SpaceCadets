@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class PlayerJoin : MonoBehaviour
@@ -30,6 +31,5 @@ public class PlayerJoin : MonoBehaviour
 
         _playerManager.BigPlayer = _bigPlayerPiggyBack;
         _playerManager.SmallPlayer = _smallPlayerPiggyBack;
-
     }
 }
