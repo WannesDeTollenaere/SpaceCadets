@@ -35,6 +35,7 @@ public class Lift : MonoBehaviour
         //beginsound
         Debug.Log("ELEVATOR GOING UP");
         m_envMLA.PlayContainerElement(m_audioSource, EnvironmentElements.ElevatorUp);
+        AudioEvents.ElevatorUp();
 
     }
 
