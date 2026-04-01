@@ -12,8 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43ccc7bd829aa243931f9c9b2820bef, type: 3}
   m_Name: RobotMLA
   m_EditorClassIdentifier: Assembly-CSharp::SpaceCadets.Audio.MultiLayerAudioRobot
-  m_pitchMinMax: {x: 1, y: 1}
+  m_pitchMinMax: {x: 0.9, y: 1.1}
   m_layers:
-  - m_clips: []
-    m_minMaxVolume: {x: 0, y: 0}
+  - m_clips:
+    - {fileID: 8300000, guid: 2ff22b3497fe06a43adb30ab761e09dd, type: 3}
+    - {fileID: 8300000, guid: 9d6b468e46df8ac4fb485ce40c4d2c6a, type: 3}
+    - {fileID: 8300000, guid: 106dc76fdb71c4643b7a4537e819c288, type: 3}
+    - {fileID: 8300000, guid: 6fc4fe930386bce439e4623445170fdc, type: 3}
+    m_minMaxVolume: {x: 0.4, y: 0.6}
     m_elementName: 0
+  - m_clips:
+    - {fileID: 8300000, guid: 68e0d2547a3713e4592266a1b678cfdd, type: 3}
+    - {fileID: 8300000, guid: ae8da0bcc4753354ba2ec3ce878832f1, type: 3}
+    - {fileID: 8300000, guid: 88463defafc4f4a49a84b2e34bcc30c4, type: 3}
+    m_minMaxVolume: {x: 0.5, y: 0.5}
+    m_elementName: 1

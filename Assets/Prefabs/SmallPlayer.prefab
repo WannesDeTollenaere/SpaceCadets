@@ -437,7 +437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bb0c2139a69b754889b20b873de875d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 47.969402
+      value: 30.379023
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bb0c2139a69b754889b20b873de875d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -445,11 +445,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bb0c2139a69b754889b20b873de875d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.95
+      value: -1.56
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bb0c2139a69b754889b20b873de875d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.87
+      value: 2.74
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bb0c2139a69b754889b20b873de875d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scanner
   _satellitePivot: {fileID: 3584069018598221984}
-  _raderScale: {x: 48.885883, y: 48.842655, z: 60.052574}
+  _raderScale: {x: 12.083005, y: 14.782212, z: 30.379023}
   m_lilGuyMLA: {fileID: 11400000, guid: 0862f78c71edef6468db9f003afc77e1, type: 2}
   m_oneShotSource: {fileID: 2847901758316287225}
   m_loopSource: {fileID: 1370653610151843661}
