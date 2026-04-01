@@ -119,7 +119,7 @@ MonoBehaviour:
   _settingsPanel: {fileID: 0}
   _mainMenuFirstSelected: {fileID: 2202326810785815567}
   _settingsFirstSelected: {fileID: 0}
-  _gameSceneName: GridTest
+  _gameSceneName: EnvironmentScene
 --- !u!1001 &9043556399226182138
 PrefabInstance:
   m_ObjectHideFlags: 0
