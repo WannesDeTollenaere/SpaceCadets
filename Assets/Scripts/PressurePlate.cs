@@ -9,9 +9,15 @@ public class PressurePlate : MonoBehaviour
     private string _triggerTag = "Player";
     [SerializeField] private MultiLayerAudioEnvironment m_EnvMLA;
     private AudioSource m_audioSource;
+    [SerializeField]
+    private float flipDownSpeed;
+    [SerializeField]
+    private Transform _VisualPosition;
 
     public UnityEvent OnPressed;
     public UnityEvent OnReleased;
+
+    private bool _IsDown;
 
     private int _objectsOnPlate = 0;
 
@@ -29,8 +35,19 @@ public class PressurePlate : MonoBehaviour
             {
                 OnPressed?.Invoke();
                 m_EnvMLA.PlayContainerElement(m_audioSource, EnvironmentElements.PressurePlateDown);
-
+                _IsDown = true;
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (_IsDown)
+        {
+            _VisualPosition.localPosition = Vector3.Slerp(_VisualPosition.localPosition, Vector3.down * -0.2f, flipDownSpeed * Time.deltaTime);
+        }
+        else if (!_IsDown) {
+            _VisualPosition.localPosition = Vector3.Slerp(_VisualPosition.localPosition, Vector3.zero, flipDownSpeed * Time.deltaTime);
         }
     }
 
@@ -45,6 +62,7 @@ public class PressurePlate : MonoBehaviour
                 _objectsOnPlate = 0; 
                 OnReleased?.Invoke();
                 m_EnvMLA.PlayContainerElement(m_audioSource, EnvironmentElements.PressurePlateUp);
+                _IsDown = false;
             }
         }
     }
