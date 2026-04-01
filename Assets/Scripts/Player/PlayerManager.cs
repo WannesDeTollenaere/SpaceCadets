@@ -1,21 +1,29 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField]
-    private float _rotationSpeed = 100.0f;
-    [SerializeField]
-    private float _timeBuffer = 0.3f;
-    [SerializeField]
-    private float _attachDuration = 2.0f;
-    [SerializeField]
-    private float _distanceThreshold = 1.0f;
-    [SerializeField]
-    private PiggyBackInputHint _piggyBackInput;
-    [SerializeField]
-    private float _rangeIndicatorHeight = 1.0f;
+    public static PlayerManager Instance;
+
+    [SerializeField] private int _totalLives = 3;
+    [SerializeField] private string _gameOverSceneName = "GameOver";
+    private Vector3 _currentCheckpoint;
+
+    [SerializeField] private float _rotationSpeed = 100.0f;
+    [SerializeField] private float _timeBuffer = 0.3f;
+    [SerializeField] private float _attachDuration = 2.0f;
+    [SerializeField] private float _distanceThreshold = 1.0f;
+    [SerializeField] private PiggyBackInputHint _piggyBackInput;
+    [SerializeField] private float _rangeIndicatorHeight = 1.0f;
+
+    private bool _isShuttingDown = false;
+
+    public UnityEvent<int> OnHealthChanged;
+
+    public int TotalLives => _totalLives;
 
     private PiggyBack _bigPlayer;
     public PiggyBack BigPlayer
@@ -23,6 +31,7 @@ public class PlayerManager : MonoBehaviour
         get { return _bigPlayer; }
         set { _bigPlayer = value; }
     }
+
     private PiggyBack _smallPlayer;
     public PiggyBack SmallPlayer
     {
@@ -32,8 +41,6 @@ public class PlayerManager : MonoBehaviour
 
     private Scanner _scanner;
 
-
-
     public enum PiggyBackState
     {
         Detached,
@@ -42,23 +49,39 @@ public class PlayerManager : MonoBehaviour
     }
 
     private PiggyBackState _piggyBackState = PiggyBackState.Detached;
-
     private bool _arePlayersInRange = false;
     private bool _isAttachCooldownActive = false;
 
     public UnityEvent OnPlayersAttached;
     public UnityEvent OnPlayersDetached;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Start()
     {
         _bigPlayer.OnPlayerPressedPiggyBack.AddListener(AttachPlayers);
         _smallPlayer.OnPlayerPressedPiggyBack.AddListener(AttachPlayers);
+
+        if (_bigPlayer != null)
+        {
+            _currentCheckpoint = _bigPlayer.transform.position;
+        }
     }
 
     private void OnDestroy()
     {
-        _bigPlayer.OnPlayerPressedPiggyBack.RemoveListener(AttachPlayers);
-        _smallPlayer.OnPlayerPressedPiggyBack.RemoveListener(AttachPlayers);
+        if (_bigPlayer != null) _bigPlayer.OnPlayerPressedPiggyBack.RemoveListener(AttachPlayers);
+        if (_smallPlayer != null) _smallPlayer.OnPlayerPressedPiggyBack.RemoveListener(AttachPlayers);
     }
 
     private void Update()
@@ -97,6 +120,82 @@ public class PlayerManager : MonoBehaviour
             }
         }
     }
+
+
+    public void UpdateCheckpoint(Vector3 newCheckpointPosition)
+    {
+        _currentCheckpoint = newCheckpointPosition;
+    }
+
+    public void PlayerDied()
+    {
+        if (_isShuttingDown) return;
+        _totalLives--;
+
+        OnHealthChanged?.Invoke(_totalLives);
+
+        if (_totalLives <= 0)
+        {
+            SceneManager.LoadScene(_gameOverSceneName);
+        }
+        else
+        {
+            RespawnPlayers();
+        }
+    }
+
+    private void RespawnPlayers()
+    {
+        ForceDetachForRespawn();
+
+        _bigPlayer.transform.position = _currentCheckpoint + new Vector3(-0.2f, 0, 0);
+        _smallPlayer.transform.position = _currentCheckpoint + new Vector3(0.2f, 0, 0);
+
+        ResetRigidbody(_bigPlayer.GetComponent<Rigidbody>());
+        ResetRigidbody(_smallPlayer.GetComponent<Rigidbody>());
+    }
+
+    private void ForceDetachForRespawn()
+    {
+        if (_piggyBackState != PiggyBackState.Detached)
+        {
+            _smallPlayer.transform.SetParent(null);
+
+            var smallRB = _smallPlayer.GetComponent<Rigidbody>();
+            if (smallRB != null) smallRB.useGravity = true;
+
+            _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
+
+            _piggyBackState = PiggyBackState.Detached;
+            _isAttachCooldownActive = false;
+            OnPlayersDetached?.Invoke();
+        }
+    }
+
+    private void ResetRigidbody(Rigidbody rb)
+    {
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector3.zero; 
+            rb.angularVelocity = Vector3.zero;
+        }
+    }
+
+    public void SetNewPlayers(PiggyBack newBig, PiggyBack newSmall)
+    {
+        if (_bigPlayer != null) _bigPlayer.OnPlayerPressedPiggyBack.RemoveListener(AttachPlayers);
+        if (_smallPlayer != null) _smallPlayer.OnPlayerPressedPiggyBack.RemoveListener(AttachPlayers);
+
+        _bigPlayer = newBig;
+        _smallPlayer = newSmall;
+
+        _bigPlayer.OnPlayerPressedPiggyBack.AddListener(AttachPlayers);
+        _smallPlayer.OnPlayerPressedPiggyBack.AddListener(AttachPlayers);
+
+        _piggyBackState = PiggyBackState.Detached;
+        _isAttachCooldownActive = false;
+    }
+
 
     private void AttachPlayers()
     {
@@ -167,31 +266,35 @@ public class PlayerManager : MonoBehaviour
         while (elapsedTime < _attachDuration)
         {
             float t = elapsedTime / _attachDuration;
-
             _smallPlayer.transform.position = Vector3.Lerp(startPosition, _bigPlayer.AttachTransform.position, t);
-
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        ;
 
         _smallPlayer.transform.position = _bigPlayer.AttachTransform.position;
-
         _smallPlayer.transform.SetParent(_bigPlayer.transform);
+
         var _smallPlayerRB = _smallPlayer.GetComponent<Rigidbody>();
         _smallPlayerRB.useGravity = false;
 
         _piggyBackState = PiggyBackState.Attached;
-        
+
         _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
 
         OnPlayersAttached?.Invoke();
     }
+    private void OnApplicationQuit()
+    {
+        _isShuttingDown = true;
+    }
 
+    private void OnDisable()
+    {
+        _isShuttingDown = true;
+    }
     private void DetachPlayers()
     {
         _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
-
         _smallPlayer.transform.SetParent(null);
 
         var _smallPlayerRB = _smallPlayer.GetComponent<Rigidbody>();
@@ -202,7 +305,6 @@ public class PlayerManager : MonoBehaviour
         _isAttachCooldownActive = true;
         _piggyBackState = PiggyBackState.Detached;
         OnPlayersDetached?.Invoke();
-
 
         StartCoroutine(AttachCooldownRoutine());
     }
@@ -215,7 +317,6 @@ public class PlayerManager : MonoBehaviour
         {
             return true;
         }
-        
 
         return false;
     }
@@ -228,11 +329,9 @@ public class PlayerManager : MonoBehaviour
         while (timer < attachCooldown)
         {
             timer += Time.deltaTime;
-
             yield return null;
         }
 
         _isAttachCooldownActive = false;
     }
 }
-
