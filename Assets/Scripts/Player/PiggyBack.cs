@@ -50,7 +50,10 @@ public class PiggyBack : MonoBehaviour
         if (!m_isBigG)
         {
             m_lilGuyMLA.PlayContainerElement(m_oneShotAudioSource, LilGuyElements.Attach);
+            AudioEvents.Attach();
+
         }
+        
 
     }
 
@@ -65,6 +68,8 @@ public class PiggyBack : MonoBehaviour
         if (!m_isBigG)
         {
             m_lilGuyMLA.PlayContainerElement(m_oneShotAudioSource, LilGuyElements.Detach);
+            AudioEvents.Detach();
         }
+        
     }
 }

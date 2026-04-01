@@ -84,3 +84,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Oxygen
   _drainRate: 0.05
+  _playerJoin: {fileID: 0}
+  _normalMaterial: {fileID: -876546973899608171, guid: f72ff4cfce3a36a47b25c6b0edd01df1, type: 3}
+  _pulsingMaterial: {fileID: -876546973899608171, guid: 2a9e9c6a427618a4a841a750a2e575ab, type: 3}

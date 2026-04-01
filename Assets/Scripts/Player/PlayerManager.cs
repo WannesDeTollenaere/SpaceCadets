@@ -32,6 +32,8 @@ public class PlayerManager : MonoBehaviour
 
     private Scanner _scanner;
 
+
+
     public enum PiggyBackState
     {
         Detached,
@@ -213,6 +215,7 @@ public class PlayerManager : MonoBehaviour
         {
             return true;
         }
+        
 
         return false;
     }

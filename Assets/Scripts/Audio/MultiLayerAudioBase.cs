@@ -65,8 +65,8 @@ namespace SpaceCadets.Audio
                 yield return null;
             }
             //Debug.Log($"Fade finished, restoring to: {startVolume}");
-            source.Stop();
-            source.volume = startVolume;
+            //source.Stop();
+            //source.volume = startVolume;
         }
 
         public void FadeInAndPlay(AudioSource source, MonoBehaviour caller, float targetVolume = 1f, float duration = 0.05f)
