@@ -204,7 +204,7 @@ public class PlayerManager : MonoBehaviour
         StartCoroutine(AttachCooldownRoutine());
     }
 
-    private bool ArePlayersInRange()
+    public bool ArePlayersInRange()
     {
         float sqrDistance = Vector3.SqrMagnitude(_bigPlayer.transform.position - _smallPlayer.transform.position);
 
