@@ -487,6 +487,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5932172195088758204, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
+      propertyPath: m_isBigG
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932172195088758204, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
       propertyPath: m_lilGuyMLA
       value: 
       objectReference: {fileID: 11400000, guid: 0862f78c71edef6468db9f003afc77e1, type: 2}

@@ -16,6 +16,7 @@ public class PiggyBack : MonoBehaviour
     [SerializeField]private AudioSource m_loopAudioSource;
     [SerializeField] private AudioSource m_oneShotAudioSource;
     [SerializeField] private AudioSource m_footstepAudioSource;
+    [SerializeField] private bool m_isBigG;
 
 
 
@@ -46,7 +47,11 @@ public class PiggyBack : MonoBehaviour
         _pressedPiggyBack = true;
         OnPlayerPressedPiggyBack?.Invoke();
         //Start Sound Attach
-        m_lilGuyMLA.PlayContainerElement(m_oneShotAudioSource, LilGuyElements.Attach);
+        if (!m_isBigG)
+        {
+            m_lilGuyMLA.PlayContainerElement(m_oneShotAudioSource, LilGuyElements.Attach);
+        }
+
     }
 
     public void Launch()
@@ -57,6 +62,9 @@ public class PiggyBack : MonoBehaviour
 
         _rigidBody.AddForce(_launchForce * launchDirection);
         //Start Sound Detach 
-        m_lilGuyMLA.PlayContainerElement(m_oneShotAudioSource, LilGuyElements.Detach);
+        if (!m_isBigG)
+        {
+            m_lilGuyMLA.PlayContainerElement(m_oneShotAudioSource, LilGuyElements.Detach);
+        }
     }
 }

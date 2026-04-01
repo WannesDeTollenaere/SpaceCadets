@@ -21,6 +21,15 @@ public class PlayerJoin : MonoBehaviour
     private GameObject _bigPlayer;
     private GameObject _smallPlayer;
 
+    public GameObject BigPlayer
+    {
+        get { return _bigPlayer; }
+    }
+    public GameObject SmallPlayer
+    {
+        get { return _smallPlayer; }
+    }
+
     private PiggyBack _bigPlayerPiggyBack;
     private PiggyBack _smallPlayerPiggyBack;
 

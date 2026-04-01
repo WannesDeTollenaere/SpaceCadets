@@ -17,6 +17,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField] MultiLayerAudioMusic m_musicMLA;
     [SerializeField] MultiLayerAudioEnvironment m_envMLA;
     [SerializeField] AudioMixer m_mixer;
+    private bool m_addedClapsStem = false;
 
 
     private void Awake()
@@ -42,8 +43,14 @@ public class MusicManager : MonoBehaviour
     private void OnEnable()
     {
         AudioEvents.OnWallExploded += HandleWallExplosion;
+        AudioEvents.OnElevatorUp += HandleElevatorUp;
     }
 
+    private void OnDisable()
+    {
+        AudioEvents.OnWallExploded -= HandleWallExplosion;
+        AudioEvents.OnElevatorUp -= HandleElevatorUp;
+    }
     private IEnumerator FadeMixerVolume(string parameter, float fromDb, float toDb, float duration)
     {
         float fromLinear = Mathf.Pow(10f, fromDb / 20f);
@@ -64,6 +71,16 @@ public class MusicManager : MonoBehaviour
         m_musicMLA.FadeInAndPlay(m_melodySource, this, 1, 10.0f);
         m_envMLA.PlayContainerElement(m_envSource, EnvironmentElements.WallExplode);
         Debug.Log("HandleWall Explosion");
+    }
+    private void HandleElevatorUp()
+    {
+        if (!m_addedClapsStem)
+        {
+            m_musicMLA.FadeInAndPlay(m_percussionClapsSource, this, 1, 10.0f);
+            Debug.Log("Fade in clappas");
+            m_addedClapsStem = true;
+        }
+       
     }
 
 

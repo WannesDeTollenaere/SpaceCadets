@@ -9,6 +9,8 @@ namespace SpaceCadets.Audio
 
         public static event Action OnWallExploded;
         public static void WallExploded() => OnWallExploded?.Invoke();
+        public static event Action OnElevatorUp;
+        public static void ElevatorUp() => OnElevatorUp?.Invoke();
 
     }
 }
