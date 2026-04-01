@@ -36,16 +36,6 @@ public class Oxygen : MonoBehaviour
             {
                 _renderer.material = _pulsingMaterial;
             }
-        }
-        else
-        {
-            _currentMeter = _maxMeter;
-
-            if (_renderer.material != _normalMaterial)
-            {
-                _renderer.material = _normalMaterial;
-            }
-
             if (_currentMeter <= 0)
             {
                 if (_playerJoin.SmallPlayer)
@@ -56,7 +46,19 @@ public class Oxygen : MonoBehaviour
                         health.Die();
                     }
                 }
+                _currentMeter = _maxMeter;
             }
+        }
+        else
+        {
+            _currentMeter = _maxMeter;
+
+            if (_renderer.material != _normalMaterial)
+            {
+                _renderer.material = _normalMaterial;
+            }
+
+
         }
     }
 }
