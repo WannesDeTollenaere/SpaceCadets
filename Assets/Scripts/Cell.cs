@@ -19,17 +19,20 @@ public class Cell : MonoBehaviour, ICell
             Activate();
         }
     }
-    public void Reveal()
+    public bool Reveal()
     {
         if (CellState == ICell.State.Triggered || CellState == ICell.State.Revealed)
-            return;
+            return false;
 
         CellState = ICell.State.Revealed;
 
         if (_scannedVisual != null)
         {
             _scannedVisual.SetActive(true);
+
+            return true;
         }
+        return false;
     }
 
     public void Hide()

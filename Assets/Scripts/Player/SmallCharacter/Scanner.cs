@@ -1,5 +1,6 @@
 using SpaceCadets.Audio;
 using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -69,11 +70,10 @@ public class Scanner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Cell>())
+        if (other.GetComponent<Cell>().Reveal())
         {
-            other.GetComponent<Cell>().Reveal();
             //Show Bomb SFX
-
+            m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.BombShown);
         }
     }
 
