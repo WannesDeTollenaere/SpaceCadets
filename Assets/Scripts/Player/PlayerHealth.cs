@@ -1,3 +1,4 @@
+using SpaceCadets.Audio;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
             OnPlayerDied?.Invoke();
             StartCoroutine(RespawnTimerRoutine());
             //PlayerManager.Instance.PlayerDied();
+            AudioEvents.PlayerDamage();
         }
     }
 
