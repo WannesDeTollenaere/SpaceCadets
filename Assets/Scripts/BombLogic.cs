@@ -20,7 +20,7 @@ public class BombLogic : MonoBehaviour, ICell
         {
             Activate();
 
-            PlayerHealth health = other.GetComponent<PlayerHealth>();
+            PlayerHealth health = other.GetComponentInParent<PlayerHealth>();
             if (health != null)
             {
                 health.Die();
