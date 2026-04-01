@@ -50,3 +50,9 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 601f9ecbc0330d6449f1f6222e5ee086, type: 3}
     m_minMaxVolume: {x: 1, y: 1}
     m_elementName: 5
+  - m_clips:
+    - {fileID: 8300000, guid: f36b965c17bbb7c48aad9bc8d3ee50fc, type: 3}
+    - {fileID: 8300000, guid: 129893d79bdfeb741b172283bb5594b3, type: 3}
+    - {fileID: 8300000, guid: 45e457cc434a4454c96c03fd1f58dabd, type: 3}
+    m_minMaxVolume: {x: 1, y: 1}
+    m_elementName: 6
