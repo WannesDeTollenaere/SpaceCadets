@@ -1,3 +1,4 @@
+using SpaceCadets.Audio;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -174,7 +175,7 @@ public class PlayerManager : MonoBehaviour
     private void RespawnPlayers()
     {
         ForceDetachForRespawn();
-
+        AudioEvents.PlayerRespawn();
         _bigPlayer.transform.position = _currentCheckpoint + new Vector3(-0.2f, 0, 0);
         _smallPlayer.transform.position = _currentCheckpoint + new Vector3(0.2f, 0, 0);
 
@@ -182,6 +183,7 @@ public class PlayerManager : MonoBehaviour
         {
             Instantiate(_respawnVFX, _bigPlayer.transform);
             Instantiate(_respawnVFX, _smallPlayer.transform);
+            
         }
 
         ResetRigidbody(_bigPlayer.GetComponent<Rigidbody>());

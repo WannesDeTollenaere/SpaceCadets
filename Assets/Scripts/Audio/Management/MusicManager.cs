@@ -129,12 +129,12 @@ public class MusicManager : MonoBehaviour
 
     private void HandlePlayerRespawn()
     {
-        if (Time.time - m_lastDamagePlayTime >= 3f)
-        {
+        //if (Time.time - m_lastDamagePlayTime >= 3f)
+       // {
             m_lastDamagePlayTime = Time.time;
             m_envMLA.PlayContainerElement(m_damageSource, EnvironmentElements.Respawn);
             Debug.Log("Play respawn sound");
-        }
+       // }
 
 
     }
