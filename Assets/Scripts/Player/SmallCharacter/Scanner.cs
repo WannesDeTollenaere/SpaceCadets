@@ -70,7 +70,9 @@ public class Scanner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Cell>().Reveal())
+        other.GetComponent<Cell>()?.Reveal();
+
+        if (other.GetComponent<Cell>().IsBomb())
         {
             //Show Bomb SFX
             m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.BombShown);
