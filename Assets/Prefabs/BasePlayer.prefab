@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 6253591637808629719}
   - component: {fileID: 5932172195088758204}
   - component: {fileID: 4240214100606495449}
+  - component: {fileID: 7988698434331333324}
   m_Layer: 0
   m_Name: BasePlayer
   m_TagString: Player
@@ -319,6 +320,11 @@ MonoBehaviour:
   _attachTransform: {fileID: 0}
   _launchForce: 1000
   _launchUpFactor: 0.5
+  m_lilGuyMLA: {fileID: 0}
+  m_loopAudioSource: {fileID: 0}
+  m_oneShotAudioSource: {fileID: 0}
+  m_footstepAudioSource: {fileID: 0}
+  m_isBigG: 0
   OnPlayerPressedPiggyBack:
     m_PersistentCalls:
       m_Calls: []
@@ -334,6 +340,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51aaa21736af1324fb8d335fbe33bdd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCameraJoin
+--- !u!114 &7988698434331333324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8353394953277733429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c490a18fd35f564cafcfb58900dd50d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
 --- !u!1 &8523541462627896469
 GameObject:
   m_ObjectHideFlags: 0

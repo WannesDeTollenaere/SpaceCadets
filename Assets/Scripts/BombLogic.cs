@@ -20,8 +20,11 @@ public class BombLogic : MonoBehaviour, ICell
         {
             Activate();
 
-            // kill player
-            Destroy(other.gameObject);
+            PlayerHealth health = other.GetComponent<PlayerHealth>();
+            if (health != null)
+            {
+                health.Die();
+            }
         }
     }
 

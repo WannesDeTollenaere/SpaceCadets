@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 639149460808280431}
   - component: {fileID: 4593219703331126541}
-  - component: {fileID: 4298987989799870569}
   - component: {fileID: 3837990785239815033}
   m_Layer: 0
   m_Name: Bomb
@@ -54,21 +53,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1.33
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4298987989799870569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7350350510180020533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de1381d5b67a58e43a09d7cb3eb024e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BombLogic
-  m_EnvMLA: {fileID: 11400000, guid: 3a14c948414d1824fbf46db81b3ea481, type: 2}
 --- !u!82 &3837990785239815033
 AudioSource:
   m_ObjectHideFlags: 0
