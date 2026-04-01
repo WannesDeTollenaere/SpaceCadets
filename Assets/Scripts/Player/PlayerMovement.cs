@@ -3,11 +3,14 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using static UnityEngine.UI.Image;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    private float _moveSpeed = 5.0f;
+    private float _moveSpeed = 20.0f;
+    [SerializeField] private float _walkSpeed = 20.0f;
+    [SerializeField] private float _airSpeed = 5.0f;
+
     [SerializeField]
     private float _rotationSpeed = 5.0f;
 
@@ -77,6 +80,18 @@ public class PlayerMovement : MonoBehaviour
         {
             _isMoving = true;
             OnStartedMoving?.Invoke();
+        }
+
+
+        if (Physics.SphereCast(_rb.position - 2f * Vector3.down, 5.0f, Vector3.down, out var hitInfo))
+        {
+            Debug.Log("Walking");
+            _moveSpeed = _walkSpeed;
+        }
+        else
+        {
+            Debug.Log("Air");
+            _moveSpeed = _airSpeed;
         }
     }
 }

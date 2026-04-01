@@ -429,11 +429,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6bb0c2139a69b754889b20b873de875d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 17.37312
+      value: 12.083005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bb0c2139a69b754889b20b873de875d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 17.357756
+      value: 14.782212
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bb0c2139a69b754889b20b873de875d, type: 3}
       propertyPath: m_LocalScale.z
@@ -445,11 +445,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bb0c2139a69b754889b20b873de875d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.02
+      value: -2.95
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bb0c2139a69b754889b20b873de875d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.97
+      value: 4.87
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bb0c2139a69b754889b20b873de875d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -615,6 +615,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5126586980172926220, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126586980172926220, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
+      propertyPath: m_LinearDamping
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5932172195088758204, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
       propertyPath: m_lilGuyMLA
       value: 
@@ -639,6 +647,14 @@ PrefabInstance:
       propertyPath: m_footstepAudioSource
       value: 
       objectReference: {fileID: 8015599235687893533}
+    - target: {fileID: 6253591637808629719, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
+      propertyPath: _airSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253591637808629719, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
+      propertyPath: _walkSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6319434911966930576, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
       propertyPath: m_Name
       value: Visor
