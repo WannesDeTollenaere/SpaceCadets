@@ -203,7 +203,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: a40f9bf1d94dbd3439dd4dd4246db980, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 40ba83c647047ac45a7eaffac24b4e9f, type: 2}
+      objectReference: {fileID: -876546973899608171, guid: 0532f0771f4be3948a35a1d976f2e568, type: 3}
     - target: {fileID: 919132149155446097, guid: a40f9bf1d94dbd3439dd4dd4246db980, type: 3}
       propertyPath: m_Name
       value: SM_Bomb
