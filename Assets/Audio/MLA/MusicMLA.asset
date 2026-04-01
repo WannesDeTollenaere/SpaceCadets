@@ -15,10 +15,30 @@ MonoBehaviour:
   m_pitchMinMax: {x: 1, y: 1}
   m_layers:
   - m_clips:
-    - {fileID: 8300000, guid: d733a9861894de54b898fbfd080a8917, type: 3}
+    - {fileID: 8300000, guid: 982efc0cb35a50b4d9ba1222cec0d572, type: 3}
     m_minMaxVolume: {x: 1, y: 1}
     m_elementName: 0
   - m_clips:
-    - {fileID: 8300000, guid: 9310448452a3e444789b8a4f282820d4, type: 3}
-    m_minMaxVolume: {x: 0, y: 0}
+    - {fileID: 8300000, guid: dd3b0de75de3e294ea70b6f7b5d97f4b, type: 3}
+    m_minMaxVolume: {x: 1, y: 1}
     m_elementName: 1
+  - m_clips:
+    - {fileID: 8300000, guid: db179b5fd7a69834e8a09acbffeefe85, type: 3}
+    m_minMaxVolume: {x: 0, y: 0}
+    m_elementName: 2
+  - m_clips:
+    - {fileID: 8300000, guid: 5e93b32d350d5064a8715e6eb7aa09ce, type: 3}
+    m_minMaxVolume: {x: 0, y: 0}
+    m_elementName: 3
+  - m_clips:
+    - {fileID: 8300000, guid: 77351c13a96ee8c47ba9a501b71f2eae, type: 3}
+    m_minMaxVolume: {x: 1, y: 1}
+    m_elementName: 4
+  - m_clips:
+    - {fileID: 8300000, guid: 086260d3631b39c46ac353f6f8a79d0b, type: 3}
+    m_minMaxVolume: {x: 1, y: 1}
+    m_elementName: 5
+  - m_clips:
+    - {fileID: 8300000, guid: b11435bb763f04744a8df8c49dfc7b83, type: 3}
+    m_minMaxVolume: {x: 0, y: 0}
+    m_elementName: 6

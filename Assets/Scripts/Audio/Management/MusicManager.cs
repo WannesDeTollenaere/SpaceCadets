@@ -56,7 +56,7 @@ public class MusicManager : MonoBehaviour
 
     private void HandleWallExplosion()
     {
-        m_musicMLA.FadeInAndPlay(m_melodySource, this, 1, 5.0f);
+        m_musicMLA.FadeInAndPlay(m_melodySource, this, 1, 10.0f);
         Debug.Log("HandleWall Explosion");
     }
 

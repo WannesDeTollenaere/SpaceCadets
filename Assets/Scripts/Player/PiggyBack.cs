@@ -1,3 +1,4 @@
+using SpaceCadets.Audio;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -10,6 +11,14 @@ public class PiggyBack : MonoBehaviour
     private float _launchForce = 10.0f;
     [SerializeField]
     private float _launchUpFactor = 0.5f;
+    [SerializeField]
+    private MultiLayerAudioLilGuy m_lilGuyMLA;
+    private AudioSource m_audioSource;
+
+    private void Awake()
+    {
+        m_audioSource = GetComponent<AudioSource>();
+    }
 
     public Transform AttachTransform
     {
@@ -37,6 +46,7 @@ public class PiggyBack : MonoBehaviour
         _pressedPiggyBack = true;
         OnPlayerPressedPiggyBack?.Invoke();
         //Start Sound Attach
+        m_lilGuyMLA.PlayContainerElement(m_audioSource, LilGuyElements.Attach);
     }
 
     public void Launch()
@@ -47,5 +57,6 @@ public class PiggyBack : MonoBehaviour
 
         _rigidBody.AddForce(_launchForce * launchDirection);
         //Start Sound Detach 
+        m_lilGuyMLA.PlayContainerElement(m_audioSource, LilGuyElements.Detach);
     }
 }

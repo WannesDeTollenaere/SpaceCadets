@@ -13,4 +13,14 @@ MonoBehaviour:
   m_Name: LilGuyMLA
   m_EditorClassIdentifier: Assembly-CSharp::SpaceCadets.Audio.MultiLayerAudioLilGuy
   m_pitchMinMax: {x: 1, y: 1}
-  m_layers: []
+  m_layers:
+  - m_clips:
+    - {fileID: 8300000, guid: 539de0e13c77564438fde8a53839aaf6, type: 3}
+    - {fileID: 8300000, guid: 53461f09c58aa7843bbbd97dd0a41d75, type: 3}
+    m_minMaxVolume: {x: 1, y: 1}
+    m_elementName: 7
+  - m_clips:
+    - {fileID: 8300000, guid: 9133738d4486d6141b378f1b17666fd4, type: 3}
+    - {fileID: 8300000, guid: 1d062535590e9ae4aaf762b36ba66f45, type: 3}
+    m_minMaxVolume: {x: 1, y: 1}
+    m_elementName: 8
