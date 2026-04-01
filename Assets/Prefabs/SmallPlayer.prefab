@@ -428,8 +428,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 6690450421867474441}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 17a5b0f4523edb947a6f9607db4dc15d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5942571
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 17a5b0f4523edb947a6f9607db4dc15d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5942571
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 17a5b0f4523edb947a6f9607db4dc15d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.3989
+      value: 2.41
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 17a5b0f4523edb947a6f9607db4dc15d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -445,23 +453,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 17a5b0f4523edb947a6f9607db4dc15d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -1.1570551e-17
+      value: -2.4327246e-17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 17a5b0f4523edb947a6f9607db4dc15d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -6.012922e-17
+      value: -5.6192404e-17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 17a5b0f4523edb947a6f9607db4dc15d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.98198456
+      value: 0.91769135
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 17a5b0f4523edb947a6f9607db4dc15d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.18896145
+      value: 0.39729407
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 17a5b0f4523edb947a6f9607db4dc15d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -21.784
+      value: -46.818
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 17a5b0f4523edb947a6f9607db4dc15d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -508,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scanner
   _satellitePivot: {fileID: 3584069018598221984}
-  _raderScale: {x: 1, y: 1, z: 1.3989}
+  _raderScale: {x: 1.5942571, y: 1.5942571, z: 2.41}
   m_lilGuyMLA: {fileID: 11400000, guid: 0862f78c71edef6468db9f003afc77e1, type: 2}
   m_oneShotSource: {fileID: 2847901758316287225}
   m_loopSource: {fileID: 1370653610151843661}
