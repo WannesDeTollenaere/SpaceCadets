@@ -85,12 +85,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (Physics.SphereCast(_rb.position - 2f * Vector3.down, 5.0f, Vector3.down, out var hitInfo))
         {
-            Debug.Log("Walking");
             _moveSpeed = _walkSpeed;
         }
         else
         {
-            Debug.Log("Air");
             _moveSpeed = _airSpeed;
         }
     }
