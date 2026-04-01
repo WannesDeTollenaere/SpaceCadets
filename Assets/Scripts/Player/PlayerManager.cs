@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private float _distanceThreshold = 1.0f;
     [SerializeField]
-    private GameObject _playersInRangeIndicator;
+    private PiggyBackInputHint _piggyBackInput;
     [SerializeField]
     private float _rangeIndicatorHeight = 1.0f;
 
@@ -30,12 +30,15 @@ public class PlayerManager : MonoBehaviour
         set { _smallPlayer = value; }
     }
 
+    private Scanner _scanner;
+
     public enum PiggyBackState
     {
         Detached,
         Attaching,
         Attached
     }
+
     private PiggyBackState _piggyBackState = PiggyBackState.Detached;
 
     private bool _arePlayersInRange = false;
@@ -72,22 +75,23 @@ public class PlayerManager : MonoBehaviour
             _arePlayersInRange = false;
         }
 
-        if (_playersInRangeIndicator)
+        if (_piggyBackInput)
         {
             if (_arePlayersInRange && _piggyBackState == PiggyBackState.Detached)
             {
                 var playersPositionCenter = (_bigPlayer.transform.position + _smallPlayer.transform.position) / 2.0f;
-                _playersInRangeIndicator.transform.position = new Vector3(
+                _piggyBackInput.SetPosition(new Vector3(
                     playersPositionCenter.x,
                     playersPositionCenter.y + _rangeIndicatorHeight,
                     playersPositionCenter.z
+                    )
                 );
 
-                _playersInRangeIndicator.SetActive(true);
+                _piggyBackInput.Show();
             }
             else
             {
-                _playersInRangeIndicator.SetActive(false);
+                _piggyBackInput.Hide();
             }
         }
     }
@@ -176,11 +180,16 @@ public class PlayerManager : MonoBehaviour
         _smallPlayerRB.useGravity = false;
 
         _piggyBackState = PiggyBackState.Attached;
+        
+        _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
+
         OnPlayersAttached?.Invoke();
     }
 
     private void DetachPlayers()
     {
+        _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
+
         _smallPlayer.transform.SetParent(null);
 
         var _smallPlayerRB = _smallPlayer.GetComponent<Rigidbody>();
@@ -191,6 +200,7 @@ public class PlayerManager : MonoBehaviour
         _isAttachCooldownActive = true;
         _piggyBackState = PiggyBackState.Detached;
         OnPlayersDetached?.Invoke();
+
 
         StartCoroutine(AttachCooldownRoutine());
     }

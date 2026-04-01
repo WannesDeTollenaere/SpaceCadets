@@ -28,8 +28,7 @@ public class PlayerController : MonoBehaviour
 
         _lookAction = _playerInput.actions["Look"];
 
-        _scanAction = _playerInput.actions["Scan"];
-        _scanAction.performed += OnScan;
+        //_scanAction = _playerInput.actions["Scan"];
 
         _piggyBackAction = _playerInput.actions["PiggyBack"];
         _piggyBackAction.performed += OnPiggyBack;
@@ -57,18 +56,5 @@ public class PlayerController : MonoBehaviour
     private void OnPiggyBack(InputAction.CallbackContext context)
     {
         _piggyBackComp.PressPiggyBack();
-    }
-    private void OnScan(InputAction.CallbackContext context)
-    {
-        if (_scannerComp == null) return;
-
-        if (context.ReadValueAsButton())
-        {
-            _scannerComp.Activate();
-        }
-        else
-        {
-            _scannerComp.Deactivate();
-        }
     }
 }

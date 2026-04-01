@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6551686002450399090}
   - component: {fileID: 3566529644679475934}
+  - component: {fileID: 6647343059643233470}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -48,7 +49,7 @@ MonoBehaviour:
   _timeBuffer: 0.3
   _attachDuration: 0.5
   _distanceThreshold: 2
-  _playersInRangeIndicator: {fileID: 0}
+  _piggyBackInput: {fileID: 6647343059643233470}
   _rangeIndicatorHeight: 2
   OnPlayersAttached:
     m_PersistentCalls:
@@ -56,3 +57,16 @@ MonoBehaviour:
   OnPlayersDetached:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6647343059643233470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826875258792840524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78371194dfc7d44ea0b2cb1d1291259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _inputImage: {fileID: 0}
