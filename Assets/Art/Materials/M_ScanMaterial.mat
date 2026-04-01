@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_BombVisible
+  m_Name: M_ScanMaterial
   m_Shader: {fileID: -6465566751694194690, guid: 0532f0771f4be3948a35a1d976f2e568, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -47,7 +47,7 @@ Material:
     - _QueueOffset: 0
     - _ScrollSpeed: 0.2
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.16573793, b: 0, a: 1}
+    - _BaseColor: {r: 0, g: 0.16883469, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &4331519044608474969
