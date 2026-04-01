@@ -338,6 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &61281506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -464,6 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &75043055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -647,6 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &81574215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -773,6 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &85126558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1127,6 +1131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &170140562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1424,6 +1429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &197173565
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1550,6 +1556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &204213961
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1733,6 +1740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &234622964
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2315,6 +2323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &275514513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2441,6 +2450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &276113247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2567,6 +2577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &286603544
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2693,6 +2704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &314898759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2819,6 +2831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &328642424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3365,6 +3378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &395784214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3491,6 +3505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &397315199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3617,6 +3632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &403271775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3927,6 +3943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &419206814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4224,6 +4241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &442838585
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4350,6 +4368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &454409244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4476,6 +4495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &477518020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4602,6 +4622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &487568932
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4728,6 +4749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &502309236
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4854,6 +4876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &511684434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5151,6 +5174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &557563469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5277,6 +5301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &558220153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5403,6 +5428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &573745150
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5643,6 +5669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &604772328
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5940,6 +5967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &628175698
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6180,6 +6208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &644976072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6306,6 +6335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &659509556
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6489,6 +6519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &674640195
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6615,6 +6646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &680552921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6741,6 +6773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &702805484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6867,6 +6900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &703186406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6993,6 +7027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &711456052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7119,6 +7154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &721370509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7302,6 +7338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &760092983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7428,6 +7465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &772170963
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7554,6 +7592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &777523503
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7680,6 +7719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &778733419
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7806,6 +7846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &785052907
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8046,6 +8087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &821438190
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8335,6 +8377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &834080190
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8461,6 +8504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &876319666
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8644,6 +8688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &885461779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8770,6 +8815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &906608123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8896,6 +8942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &907858745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9022,6 +9069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &912171673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9148,6 +9196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &920014022
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9331,6 +9380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &955661832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9628,6 +9678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &969507557
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9811,6 +9862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &982516155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10165,6 +10217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1000608744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10291,6 +10344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1003249291
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10417,6 +10471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1021020553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10657,6 +10712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1059886223
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10897,6 +10953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1077541599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11306,6 +11363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1196812589
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11432,6 +11490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1199067317
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11558,6 +11617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1203705935
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11684,6 +11744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1233881629
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11810,6 +11871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1254878572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11936,6 +11998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1256340502
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12062,6 +12125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1274328241
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12302,6 +12366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1296029714
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12485,6 +12550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1339724145
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12611,6 +12677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1347731069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12794,6 +12861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1358378670
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13091,6 +13159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1429841958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13217,6 +13286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1438152392
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13343,6 +13413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1447690474
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13469,6 +13540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1448501281
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13595,6 +13667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1463830249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13778,6 +13851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1467361364
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14018,6 +14092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1516709070
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14201,6 +14276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1547866654
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14384,6 +14460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1578802945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14624,6 +14701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1599695849
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14807,6 +14885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1607938600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14990,6 +15069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1631528898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15173,6 +15253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1652061758
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15356,6 +15437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1657833307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15596,6 +15678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1687489056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15955,6 +16038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1798137239
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16081,6 +16165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1798276677
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16435,6 +16520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1817077688
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16561,6 +16647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1817724225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16744,6 +16831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1890715167
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16870,6 +16958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1894557772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17053,6 +17142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1906269968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17179,6 +17269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1909961831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17419,6 +17510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1938584955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17545,6 +17637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1942163647
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17728,6 +17821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &1957640718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17968,6 +18062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &2007223174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18151,6 +18246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &2040503649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18277,6 +18373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &2050751260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18403,6 +18500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &2061464682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18586,6 +18684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &2072189090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18826,6 +18925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cell
   _revealedPrefab: {fileID: 0}
+  _scannedVisual: {fileID: 0}
 --- !u!65 &2145367555
 BoxCollider:
   m_ObjectHideFlags: 0
