@@ -13,7 +13,9 @@ public class MusicManager : MonoBehaviour
     [SerializeField] AudioSource m_bassSource;
     [SerializeField] AudioSource m_padSource;
     [SerializeField] AudioSource m_melodySource;
+    [SerializeField] AudioSource m_envSource;
     [SerializeField] MultiLayerAudioMusic m_musicMLA;
+    [SerializeField] MultiLayerAudioEnvironment m_envMLA;
     [SerializeField] AudioMixer m_mixer;
 
 
@@ -60,6 +62,7 @@ public class MusicManager : MonoBehaviour
     private void HandleWallExplosion()
     {
         m_musicMLA.FadeInAndPlay(m_melodySource, this, 1, 10.0f);
+        m_envMLA.PlayContainerElement(m_envSource, EnvironmentElements.WallExplode);
         Debug.Log("HandleWall Explosion");
     }
 

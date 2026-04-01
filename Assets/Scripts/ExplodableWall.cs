@@ -8,6 +8,13 @@ public class ExplodableWall : MonoBehaviour, ICell
 
     [SerializeField]
     private GameObject _scannedVisual;
+    [SerializeField]private MultiLayerAudioEnvironment m_envMLA;
+    private AudioSource m_audioSource;
+
+    private void Awake()
+    {
+        m_audioSource = GetComponent<AudioSource>();
+    }
 
     public void Hide()
     {
@@ -27,6 +34,8 @@ public class ExplodableWall : MonoBehaviour, ICell
         CellState = ICell.State.Triggered;
 
         AudioEvents.WallExploded();
+       
+
 
         Destroy(gameObject);
     }

@@ -70,6 +70,8 @@ public class Scanner : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         other.GetComponent<Cell>()?.Reveal();
+
+
     }
 
     private void OnTriggerExit(Collider other)
