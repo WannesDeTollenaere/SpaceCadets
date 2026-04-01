@@ -18,6 +18,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float _distanceThreshold = 1.0f;
     [SerializeField] private PiggyBackInputHint _piggyBackInput;
     [SerializeField] private float _rangeIndicatorHeight = 1.0f;
+    [SerializeField] private GameObject _respawnVFX;
 
     private bool _isShuttingDown = false;
 
@@ -157,6 +158,12 @@ public class PlayerManager : MonoBehaviour
 
         _bigPlayer.transform.position = _currentCheckpoint + new Vector3(-0.2f, 0, 0);
         _smallPlayer.transform.position = _currentCheckpoint + new Vector3(0.2f, 0, 0);
+
+        if(_respawnVFX)
+        {
+            Instantiate(_respawnVFX, _bigPlayer.transform);
+            Instantiate(_respawnVFX, _smallPlayer.transform);
+        }
 
         ResetRigidbody(_bigPlayer.GetComponent<Rigidbody>());
         ResetRigidbody(_smallPlayer.GetComponent<Rigidbody>());

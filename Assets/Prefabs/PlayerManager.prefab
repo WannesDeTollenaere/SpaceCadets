@@ -46,12 +46,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc948a7934f62941b83857908c3213f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _totalLives: 3
+  _gameOverSceneName: GameOver
   _rotationSpeed: 100
   _timeBuffer: 0.3
   _attachDuration: 0.5
   _distanceThreshold: 2
   _piggyBackInput: {fileID: 6647343059643233470}
   _rangeIndicatorHeight: 2
+  _respawnVFX: {fileID: 6647407605285933441, guid: 93f9c962454bb5542beb812916d83390, type: 3}
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
   OnPlayersAttached:
     m_PersistentCalls:
       m_Calls: []

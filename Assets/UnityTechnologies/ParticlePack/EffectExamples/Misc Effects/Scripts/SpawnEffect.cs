@@ -6,6 +6,7 @@ public class SpawnEffect : MonoBehaviour {
 
     public float spawnEffectTime = 2;
     public float pause = 1;
+    public bool loop = true;
     public AnimationCurve fadeIn;
 
     ParticleSystem ps;
@@ -29,6 +30,7 @@ public class SpawnEffect : MonoBehaviour {
 	
 	void Update ()
     {
+        if (!loop) return;
         if (timer < spawnEffectTime + pause)
         {
             timer += Time.deltaTime;
