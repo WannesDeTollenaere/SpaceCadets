@@ -19,6 +19,8 @@ namespace SpaceCadets.Audio
         public static void BombExlpode() => OnBombExplode?.Invoke();
         public static event Action OnPlayerDamaged;
         public static void PlayerDamage() => OnPlayerDamaged?.Invoke();
+        public static event Action OnPlayerRespawn;
+        public static void PlayerRespawn() => OnPlayerRespawn?.Invoke();
 
     }
 }

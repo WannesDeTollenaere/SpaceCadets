@@ -49,6 +49,7 @@ public class MusicManager : MonoBehaviour
         AudioEvents.OnDetach += HandleDetach;
         AudioEvents.OnBombExplode += HandleBombExplode;
         AudioEvents.OnPlayerDamaged += HandlePlayerDamaged;
+        AudioEvents.OnPlayerRespawn += HandlePlayerRespawn;
 
     }
 
@@ -60,6 +61,7 @@ public class MusicManager : MonoBehaviour
         AudioEvents.OnDetach -= HandleDetach;
         AudioEvents.OnBombExplode -= HandleBombExplode;
         AudioEvents.OnPlayerDamaged -= HandlePlayerDamaged;
+        AudioEvents.OnPlayerRespawn -= HandlePlayerRespawn;
 
     }
     private IEnumerator FadeMixerVolume(string parameter, float fromDb, float toDb, float duration)
@@ -120,6 +122,18 @@ public class MusicManager : MonoBehaviour
             m_lastDamagePlayTime = Time.time;
             m_envMLA.PlayContainerElement(m_damageSource, EnvironmentElements.TakeDamage);
             Debug.Log("Play damaged sound");
+        }
+
+
+    }
+
+    private void HandlePlayerRespawn()
+    {
+        if (Time.time - m_lastDamagePlayTime >= 3f)
+        {
+            m_lastDamagePlayTime = Time.time;
+            m_envMLA.PlayContainerElement(m_damageSource, EnvironmentElements.Respawn);
+            Debug.Log("Play respawn sound");
         }
 
 

@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.LogError("No PlayerHealth component found.");
         }
         _health.OnPlayerDied.AddListener(StopMovement);
-        _health.OnPlayerRespawned.AddListener(() => _canMove = true);
+        PlayerManager.Instance.OnPlayersRespawned.AddListener(() => _canMove = true);
     }
 
     private void FixedUpdate()

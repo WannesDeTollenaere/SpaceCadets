@@ -19,6 +19,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private PiggyBackInputHint _piggyBackInput;
     [SerializeField] private float _rangeIndicatorHeight = 1.0f;
     [SerializeField] private GameObject _respawnVFX;
+    [SerializeField] private float _respawnTime = 2.0f;
 
     private bool _isShuttingDown = false;
 
@@ -52,9 +53,15 @@ public class PlayerManager : MonoBehaviour
     private PiggyBackState _piggyBackState = PiggyBackState.Detached;
     private bool _arePlayersInRange = false;
     private bool _isAttachCooldownActive = false;
+    private bool _isRespawning = false;
+    public bool IsRespawning
+    {
+        get { return _isRespawning; }
+    }
 
     public UnityEvent OnPlayersAttached;
     public UnityEvent OnPlayersDetached;
+    public UnityEvent OnPlayersRespawned;
 
     private void Awake()
     {
@@ -140,7 +147,16 @@ public class PlayerManager : MonoBehaviour
         if (_isShuttingDown) return;
         _totalLives--;
 
+        _isRespawning = true;
+
         OnHealthChanged?.Invoke(_totalLives);
+
+        StartCoroutine(RestartRoutine());
+    }
+
+    IEnumerator RestartRoutine()
+    {
+        yield return new WaitForSeconds(_respawnTime);
 
         if (_totalLives <= 0)
         {
@@ -149,7 +165,10 @@ public class PlayerManager : MonoBehaviour
         else
         {
             RespawnPlayers();
+            OnPlayersRespawned?.Invoke();
         }
+
+        _isRespawning = false;
     }
 
     private void RespawnPlayers()
