@@ -55,7 +55,7 @@ public class Scanner : MonoBehaviour
     {
         if (_lookInput.x * _lookInput.x < float.Epsilon) return;
 
-        //_satellitePivot.localRotation = Quaternion.identity;
+        _satellitePivot.localRotation = Quaternion.identity;
 
         Vector3 lookDirection = new Vector3(_lookInput.x, 0.0f, _lookInput.y);
 
@@ -92,21 +92,21 @@ public class Scanner : MonoBehaviour
         }
     }
 
-    public void Toggle()
+    public void Activate()
     {
-        _isActive = !_isActive;
+        _isActive = true;
 
-        if (_isActive)
-        {
-            //startsound
-            m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.ScanStart);
-            m_lilGuyMLA.PlayContainerElement(m_loopSource, LilGuyElements.ScanLoop,true,this);
-        }
-        else
-        {
-            // End Sound
-            m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.ScanEnd);
-            m_lilGuyMLA.FadeOutAndStop(m_loopSource, this);
-        }
+        //startsound
+        m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.ScanStart);
+        m_lilGuyMLA.PlayContainerElement(m_loopSource, LilGuyElements.ScanLoop, true, this);
+    }
+
+    public void Deactivate()
+    {
+        _isActive = false;
+
+        // End Sound
+        m_lilGuyMLA.PlayContainerElement(m_oneShotSource, LilGuyElements.ScanEnd);
+        m_lilGuyMLA.FadeOutAndStop(m_loopSource, this);
     }
 }

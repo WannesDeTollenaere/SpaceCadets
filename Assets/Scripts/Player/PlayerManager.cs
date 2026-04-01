@@ -178,7 +178,7 @@ public class PlayerManager : MonoBehaviour
             var smallRB = _smallPlayer.GetComponent<Rigidbody>();
             if (smallRB != null) smallRB.useGravity = true;
 
-            //_smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
+            _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Deactivate();
 
             _piggyBackState = PiggyBackState.Detached;
             _isAttachCooldownActive = false;
@@ -218,7 +218,7 @@ public class PlayerManager : MonoBehaviour
             case PiggyBackState.Detached:
                 if (_arePlayersInRange)
                 {
-                    if (_bigPlayer.PressedPiggyBack && _smallPlayer.PressedPiggyBack)
+                    if (_bigPlayer.PressedPiggyBack)
                     {
                         StartPiggyBack();
                         _bigPlayer.PressedPiggyBack = false;
@@ -295,7 +295,7 @@ public class PlayerManager : MonoBehaviour
 
         _piggyBackState = PiggyBackState.Attached;
 
-        _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
+        _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Activate();
 
         OnPlayersAttached?.Invoke();
     }
@@ -310,7 +310,7 @@ public class PlayerManager : MonoBehaviour
     }
     private void DetachPlayers()
     {
-        _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Toggle();
+        _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Deactivate();
         _smallPlayer.transform.SetParent(null);
 
         var _smallPlayerRB = _smallPlayer.GetComponent<Rigidbody>();
