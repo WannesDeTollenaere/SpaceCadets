@@ -63,7 +63,7 @@ public class PiggyBack : MonoBehaviour
         launchDirection.y = _launchUpFactor;
         launchDirection.Normalize();
 
-        _rigidBody.AddForce(_launchForce * launchDirection);
+        _rigidBody.AddForce(_launchForce * launchDirection, ForceMode.Impulse);
         //Start Sound Detach 
         if (!m_isBigG)
         {

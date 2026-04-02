@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5378292202219994785}
   - component: {fileID: 8450820713567426563}
   - component: {fileID: 8251840566179554241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VIsor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 5932172195088758204}
   - component: {fileID: 4240214100606495449}
   - component: {fileID: 7988698434331333324}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BasePlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -297,7 +297,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cbd5b2a601675243823a11bac4fef3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _moveSpeed: 20
+  _walkSpeed: 20
+  _airSpeed: 5
+  _height: 5
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
   _rotationSpeed: 15
   OnStartedMoving:
     m_PersistentCalls:
@@ -352,6 +357,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c490a18fd35f564cafcfb58900dd50d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  OnPlayerDied:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8523541462627896469
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +372,7 @@ GameObject:
   - component: {fileID: 7572041249470048694}
   - component: {fileID: 8178276755287023767}
   - component: {fileID: 3078932343981036959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Player
   m_Icon: {fileID: 0}

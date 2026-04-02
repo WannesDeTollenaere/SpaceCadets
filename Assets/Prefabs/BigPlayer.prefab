@@ -283,7 +283,7 @@ Transform:
   m_GameObject: {fileID: 8282530152596555623}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.28, z: 0}
+  m_LocalPosition: {x: 0, y: 1.637, z: -0.579}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -522,6 +522,18 @@ PrefabInstance:
       propertyPath: m_footstepAudioSource
       value: 
       objectReference: {fileID: 6282546227733529109}
+    - target: {fileID: 6253591637808629719, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
+      propertyPath: _walkSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253591637808629719, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
+      propertyPath: _castRadius
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253591637808629719, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
+      propertyPath: _castDistance
+      value: 0.52
+      objectReference: {fileID: 0}
     - target: {fileID: 8353394953277733429, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
       propertyPath: m_Name
       value: BigPlayer
@@ -564,6 +576,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8353394953277733429, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2341925927240502370}
+    - targetCorrespondingSourceObject: {fileID: 8353394953277733429, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4553933896464700694}
   m_SourcePrefab: {fileID: 100100000, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
 --- !u!4 &768592160567837659 stripped
 Transform:
@@ -685,7 +700,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -708,6 +723,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BigPlayerAnimationController
   _animator: {fileID: 1324302750167646417}
+--- !u!136 &4553933896464700694
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9108224867511859615}
+  m_Material: {fileID: 13400000, guid: 52aa2741358daff45b90e6d3ef3c76c9, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 55
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1278016961065763307
 PrefabInstance:
   m_ObjectHideFlags: 0
