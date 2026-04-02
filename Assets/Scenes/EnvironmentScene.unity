@@ -835,7 +835,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1573,7 +1573,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4842,7 +4842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -5484,7 +5484,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5964,7 +5964,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -9186,7 +9186,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -9650,7 +9650,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -10531,7 +10531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -15633,7 +15633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -16536,7 +16536,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -17328,7 +17328,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -18607,7 +18607,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -19460,7 +19460,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -28198,7 +28198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -28955,7 +28955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -29188,7 +29188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -30537,7 +30537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -32717,7 +32717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -33157,7 +33157,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -41652,7 +41652,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -42499,7 +42499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -42862,7 +42862,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -43567,7 +43567,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -44697,7 +44697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -45934,7 +45934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -47797,7 +47797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -49094,7 +49094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -51913,7 +51913,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -52661,7 +52661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -53114,7 +53114,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -54908,7 +54908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -56782,7 +56782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -57151,7 +57151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
@@ -58171,7 +58171,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.87169814, g: 0.6296621, b: 0.4062442, a: 1}
-  m_Intensity: 11.52
+  m_Intensity: 6.49
   m_Range: 4.08
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -59390,7 +59390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3792886660485448812, guid: 8c51410e4f579f34f84ac8580fc8ece9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
