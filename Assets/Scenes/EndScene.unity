@@ -831,6 +831,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6682207699752440713, guid: 2a3c00d693f02494f84dec892f2bfb55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 6707994412148487103, guid: 2a3c00d693f02494f84dec892f2bfb55, type: 3}
       propertyPath: m_fontSize
       value: 50

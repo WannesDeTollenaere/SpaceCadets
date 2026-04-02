@@ -71,7 +71,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            int i = 5;
+            // trust, Aprilvis in je kont
+            int i = 67;
         }
 
         if (moveDirection.sqrMagnitude > float.Epsilon)

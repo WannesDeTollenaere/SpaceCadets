@@ -296,6 +296,11 @@ public class PlayerManager : MonoBehaviour
         _bigPlayer.transform.rotation = Quaternion.Slerp(_bigPlayer.transform.rotation, targetRotation, _rotationSpeed * Time.fixedDeltaTime);
         _smallPlayer.transform.rotation = Quaternion.Slerp(_smallPlayer.transform.rotation, targetRotation, _rotationSpeed * Time.fixedDeltaTime);
 
+        var rbSmall = _smallPlayer.GetComponentsInChildren<Collider>();
+        foreach (var rb in rbSmall)
+        {
+            rb.enabled = false;
+        }
         StartCoroutine(PiggyBackRoutine());
     }
 
@@ -346,6 +351,13 @@ public class PlayerManager : MonoBehaviour
         _isAttachCooldownActive = true;
         _piggyBackState = PiggyBackState.Detached;
         OnPlayersDetached?.Invoke();
+
+        var rbSmall = _smallPlayer.GetComponentsInChildren<Collider>();
+        foreach (var rb in rbSmall)
+        {
+            rb.enabled = true;
+        }
+
 
         StartCoroutine(AttachCooldownRoutine());
     }

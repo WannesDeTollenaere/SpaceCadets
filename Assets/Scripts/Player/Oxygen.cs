@@ -32,7 +32,7 @@ public class Oxygen : MonoBehaviour
 
         if (!_playermanager.ArePlayersInRange())
         {
-            _currentMeter = Mathf.Max(0f, _currentMeter - _drainRate * Time.fixedDeltaTime);
+            _currentMeter = Mathf.Max(0f, _currentMeter - _drainRate * Time.deltaTime);
 
             if (_renderer.material != _pulsingMaterial)
             {

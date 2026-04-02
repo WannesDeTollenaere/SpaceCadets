@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -40, y: -40}
+  m_SizeDelta: {x: -17.5, y: -18.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7133103576632307071
 CanvasRenderer:
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6773585, g: 1, b: 1, a: 0.23137255}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.23137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2905661, g: 0.2905661, b: 0.2905661, a: 1}
+  m_Color: {r: 0.24931273, g: 0.23228903, b: 0.509434, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -187,8 +187,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 89.930115, y: -42}
-  m_SizeDelta: {x: 160.8438, y: 50}
+  m_AnchoredPosition: {x: 167.49182, y: -76.168945}
+  m_SizeDelta: {x: 275.8438, y: 98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8790756531141303270
 CanvasRenderer:
@@ -227,8 +227,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4286044415
+  m_fontColor: {r: 1, g: 0.84586835, b: 0.4666667, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -245,13 +245,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 67
+  m_fontSizeBase: 67
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.020754695, g: 1, b: 0.98239565, a: 1}
+  m_Color: {r: 0.019607842, g: 0.6323803, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -391,7 +391,6 @@ GameObject:
   - component: {fileID: 1410469754512447504}
   - component: {fileID: 556120688036207211}
   - component: {fileID: 1399093952129486632}
-  - component: {fileID: 785275988477079181}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -495,19 +494,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e572a0e2b30888c47bac1bddd59f5ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _boostBarFill: {fileID: 4085080538415260134}
-  _playerOxygen: {fileID: 0}
---- !u!114 &785275988477079181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8132847972920598582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e572a0e2b30888c47bac1bddd59f5ea5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OxygenMeter
   _boostBarFill: {fileID: 4085080538415260134}
   _playerOxygen: {fileID: 0}
