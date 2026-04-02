@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a697d1f506da4124db1aa2c0a24029f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameTimer
-  _timeRemaining: 600
+  _timeRemaining: 380
   _gameOverSceneName: LoseScene
   _timerText: {fileID: 4224324189321397567}
 --- !u!1 &5692665150858976810
