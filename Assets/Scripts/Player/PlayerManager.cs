@@ -178,9 +178,16 @@ public class PlayerManager : MonoBehaviour
         AudioEvents.PlayerRespawn();
         var rbBig = _bigPlayer.GetComponent<Rigidbody>();
         var rbSmall = _smallPlayer.GetComponent<Rigidbody>();
-        rbBig.position = _currentCheckpoint + new Vector3(-0.2f, 0, 0);
-        rbSmall.position = _currentCheckpoint + new Vector3(0.2f, 0, 0);
-       
+
+        Vector3 bigRespawnPos = _currentCheckpoint + new Vector3(-0.2f, 0, 0);
+        Vector3 smallRespawnPos = _currentCheckpoint + new Vector3(0.2f, 0, 0);
+
+        _bigPlayer.transform.position = bigRespawnPos;
+        rbBig.position = bigRespawnPos;
+
+        _smallPlayer.transform.position = smallRespawnPos;
+        rbSmall.position = smallRespawnPos;
+
 
         if (_respawnVFX)
         {
