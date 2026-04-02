@@ -18,7 +18,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 50d80786668dc524393383dfd6268f5c, type: 3}
     - {fileID: 8300000, guid: 3eae77a0ca014f845b3689ff80e94d9d, type: 3}
     - {fileID: 8300000, guid: 6fe856d0ce92d8247adfc38aa0028637, type: 3}
-    m_minMaxVolume: {x: 1, y: 1}
+    m_minMaxVolume: {x: 0.8, y: 0.9}
     m_elementName: 0
   - m_clips:
     - {fileID: 8300000, guid: bfc005ce60a0bbf42be415090c26db57, type: 3}
@@ -36,19 +36,19 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 59cd9ffc762f3a1468e970a050286a93, type: 3}
     - {fileID: 8300000, guid: 211e99a5d90f6c6499b9169a1a60fd15, type: 3}
     - {fileID: 8300000, guid: f6e0c6f50b722a443add4c20a6f21eca, type: 3}
-    m_minMaxVolume: {x: 1, y: 1}
+    m_minMaxVolume: {x: 0.7, y: 0.8}
     m_elementName: 3
   - m_clips:
     - {fileID: 8300000, guid: f60c33c782cd8ce428fb5d9a7e653723, type: 3}
     - {fileID: 8300000, guid: 4cf3707c40f6965499c38b7ba5b38b99, type: 3}
     - {fileID: 8300000, guid: b82d02fcafc19704086fd5f63fc82ca7, type: 3}
-    m_minMaxVolume: {x: 1, y: 1}
+    m_minMaxVolume: {x: 0.7, y: 0.8}
     m_elementName: 4
   - m_clips:
     - {fileID: 8300000, guid: f95f9f161faa6f846a5938f3fc905166, type: 3}
     - {fileID: 8300000, guid: e1419270ff5ce644fa261c1031dcb38a, type: 3}
     - {fileID: 8300000, guid: 601f9ecbc0330d6449f1f6222e5ee086, type: 3}
-    m_minMaxVolume: {x: 1, y: 1}
+    m_minMaxVolume: {x: 0.8, y: 0.9}
     m_elementName: 5
   - m_clips:
     - {fileID: 8300000, guid: f36b965c17bbb7c48aad9bc8d3ee50fc, type: 3}
@@ -60,5 +60,5 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 5a932197e7ca5914686be074054a8914, type: 3}
     - {fileID: 8300000, guid: 0b01716547509a5499021dd79eb1012c, type: 3}
     - {fileID: 8300000, guid: 00f03b8c4723fa04592cdb74a2e6d4cf, type: 3}
-    m_minMaxVolume: {x: 1, y: 1}
+    m_minMaxVolume: {x: 0.6, y: 0.7}
     m_elementName: 7
