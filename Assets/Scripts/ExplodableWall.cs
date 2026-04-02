@@ -37,6 +37,7 @@ public class ExplodableWall : MonoBehaviour, ICell
         CellState = ICell.State.Triggered;
 
         AudioEvents.WallExploded();
+        PlayerManager.Instance.RumbleControllers(0.5f, 0.3f);
 
         if (_revealedPrefab != null)
             Instantiate(_revealedPrefab, transform.position, transform.rotation);

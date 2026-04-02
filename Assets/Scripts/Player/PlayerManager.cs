@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
@@ -153,6 +154,7 @@ public class PlayerManager : MonoBehaviour
         if (_isShuttingDown) return;
         _totalLives--;
 
+        RumbleControllers(0.6f);
         _isRespawning = true;
 
         OnHealthChanged?.Invoke(_totalLives);
@@ -408,5 +410,19 @@ public class PlayerManager : MonoBehaviour
         }
 
         _isAttachCooldownActive = false;
+    }
+
+    public void RumbleControllers(float rumbleForce = 0.5f, float time = 0.5f)
+    {
+        StartCoroutine(RumbleRoutine(rumbleForce, time));
+    }
+
+    IEnumerator RumbleRoutine(float rumbleForce, float time)
+    {
+        Gamepad.current.SetMotorSpeeds(rumbleForce, rumbleForce);
+
+        yield return new WaitForSeconds(time);
+
+        Gamepad.current.SetMotorSpeeds(0.0f, 0.0f);
     }
 }
