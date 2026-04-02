@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExplodableWall
   _scannedVisual: {fileID: 4197022147761075052}
+  _revealedPrefab: {fileID: 3591937531759617391, guid: e707a7cd87e6d23469915c4eafc7ee34, type: 3}
   m_envMLA: {fileID: 11400000, guid: 3a14c948414d1824fbf46db81b3ea481, type: 2}
 --- !u!82 &5015684298893271144
 AudioSource:

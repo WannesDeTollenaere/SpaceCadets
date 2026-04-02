@@ -76,6 +76,11 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+
+    public float SqrDistanceBetweenPlayers()
+    {
+        return Vector3.SqrMagnitude(_bigPlayer.transform.position - _smallPlayer.transform.position);
+    }
     private void Start()
     {
         _bigPlayer.OnPlayerPressedPiggyBack.AddListener(AttachPlayers);
