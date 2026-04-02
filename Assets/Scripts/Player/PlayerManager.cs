@@ -182,7 +182,6 @@ public class PlayerManager : MonoBehaviour
         rbSmall.position = _currentCheckpoint + new Vector3(0.2f, 0, 0);
        
 
-
         if (_respawnVFX)
         {
             Instantiate(_respawnVFX, _bigPlayer.transform);
@@ -198,16 +197,25 @@ public class PlayerManager : MonoBehaviour
     {
         if (_piggyBackState != PiggyBackState.Detached)
         {
-            _smallPlayer.transform.SetParent(null);
-
-            var smallRB = _smallPlayer.GetComponent<Rigidbody>();
-            if (smallRB != null) smallRB.useGravity = true;
 
             _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Deactivate();
+            _smallPlayer.transform.SetParent(null);
 
+            var _smallPlayerRB = _smallPlayer.GetComponent<Rigidbody>();
+            _smallPlayerRB.useGravity = true;
+
+            _isAttachCooldownActive = true;
             _piggyBackState = PiggyBackState.Detached;
-            _isAttachCooldownActive = false;
             OnPlayersDetached?.Invoke();
+
+            var rbSmall = _smallPlayer.GetComponentsInChildren<Collider>();
+            foreach (var rb in rbSmall)
+            {
+                rb.enabled = true;
+            }
+
+
+            StartCoroutine(AttachCooldownRoutine());
         }
     }
 
@@ -340,6 +348,8 @@ public class PlayerManager : MonoBehaviour
     }
     private void DetachPlayers()
     {
+
+
         _smallPlayer.gameObject.GetComponentInChildren<Scanner>().Deactivate();
         _smallPlayer.transform.SetParent(null);
 
