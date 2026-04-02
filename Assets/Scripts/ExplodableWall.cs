@@ -8,6 +8,9 @@ public class ExplodableWall : MonoBehaviour, ICell
 
     [SerializeField]
     private GameObject _scannedVisual;
+    [SerializeField]
+    private GameObject _revealedPrefab;
+
     [SerializeField]private MultiLayerAudioEnvironment m_envMLA;
     private AudioSource m_audioSource;
 
@@ -34,8 +37,10 @@ public class ExplodableWall : MonoBehaviour, ICell
         CellState = ICell.State.Triggered;
 
         AudioEvents.WallExploded();
-       
+        PlayerManager.Instance.RumbleControllers(0.5f, 0.3f);
 
+        if (_revealedPrefab != null)
+            Instantiate(_revealedPrefab, transform.position, transform.rotation);
 
         Destroy(gameObject);
     }

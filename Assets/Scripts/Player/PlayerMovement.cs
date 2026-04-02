@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask _groundLayer;
 
     [SerializeField] private float _rotationSpeed = 10.0f;
+    [SerializeField] private Animator _animator;
 
     private PlayerHealth _health;
     private Vector2 _moveInput;
@@ -79,6 +81,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
             _rb.rotation = Quaternion.Slerp(_rb.rotation, targetRotation, _rotationSpeed * Time.fixedDeltaTime);
+
+            if (_animator)
+            {
+                float smoothSpeed = Mathf.Lerp(0.3f, 1.0f, Mathf.SmoothStep(0.0f, 1.0f, moveDirection.magnitude));
+                _animator.SetFloat("WalkSpeed", smoothSpeed);
+            }
         }
     }
 

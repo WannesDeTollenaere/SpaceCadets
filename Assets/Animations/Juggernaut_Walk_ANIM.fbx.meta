@@ -3,7 +3,47 @@ guid: 42915e3616f0e87448164740917124e3
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cyan
+    second: {fileID: 2100000, guid: bf2c56fc38889f54b96dcd10f776df5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark_blue_mat
+    second: {fileID: 2100000, guid: 22805bed5c26064428a7869a20ac397f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark_dark_blue
+    second: {fileID: 2100000, guid: 5403b73ab277b4443be250ba8f9acf54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light_blue
+    second: {fileID: 2100000, guid: 05e0da4d0a46ab2439ad5cc5e52c98d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark_grey
+    second: {fileID: 2100000, guid: a3755fba0316bd041b767a509d7366a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grey
+    second: {fileID: 2100000, guid: 014c49d8b6f901d4ca243f2d44b770d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 09dd7f616ea8380478b8dec59520303a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: very_dark_grey
+    second: {fileID: 2100000, guid: 4ef416873fba4bf41bb63383e66d4da8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

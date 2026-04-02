@@ -648,6 +648,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6253591637808629719, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 5002751712316574957}
+    - target: {fileID: 6253591637808629719, guid: ffa30bb654d1009458561995e7e6fd31, type: 3}
       propertyPath: _walkSpeed
       value: 2
       objectReference: {fileID: 0}

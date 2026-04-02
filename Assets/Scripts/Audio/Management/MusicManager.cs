@@ -38,7 +38,7 @@ public class MusicManager : MonoBehaviour
         m_musicMLA.PlayContainerElement(m_padSource, MusicElements.Pad, true);
         m_musicMLA.PlayContainerElement(m_melodySource, MusicElements.Melody, true);
 
-        StartCoroutine(FadeMixerVolume("MusicVolume", -40f, -12.0f, 4f));
+        StartCoroutine(FadeMixerVolume("MusicVolume", -40f, -17.0f, 4f));
     }
 
     private void OnEnable()
